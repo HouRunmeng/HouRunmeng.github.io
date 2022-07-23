@@ -144,6 +144,24 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS学习笔记（三）</title>
+    <url>/2022/06/02/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="border图形（制图）"><a href="#border图形（制图）" class="headerlink" title="border图形（制图）"></a>border图形（制图）</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">50px</span> solid transparent;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border-top</span>: <span class="number">50px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transform-origin</span>: center <span class="number">25%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: all <span class="number">1s</span> ease;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 旋转中心 */</span></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 旋转角度 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">180deg</span>);</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码呈现三角形</p>
+<p>参考网址：<a href="https://css-tricks.com/the-shapes-of-css/">https://css-tricks.com/the-shapes-of-css/</a></p>
+<h1 id="CSS精灵图"><a href="#CSS精灵图" class="headerlink" title="CSS精灵图"></a>CSS精灵图</h1><p>精灵图：将某个网站的多张图片集中到一张图片上，前端课利用CSS的定位等布局来显示对应的图片部分，减少前端请求服务端的次数（前端性能优化的一种）</p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>border图形（制图）</tag>
+        <tag>CSS精灵图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS学习笔记（二）</title>
     <url>/2022/05/29/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="单行文字省略号显示"><a href="#单行文字省略号显示" class="headerlink" title="单行文字省略号显示"></a>单行文字省略号显示</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 主要代码 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">white-space</span>: nowrap;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="comment">/*  或者（根据多行行文字省略号显示修改） */</span></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* overflow: hidden;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    text-overflow: ellipsis;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    display: -webkit-box;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-line-clamp: 1;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-box-orient: vertical; */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -204,24 +222,6 @@
         <tag>CSS</tag>
         <tag>行内块（或非替换）元素的特殊性</tag>
         <tag>结构伪类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS学习笔记（三）</title>
-    <url>/2022/06/02/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="border图形（制图）"><a href="#border图形（制图）" class="headerlink" title="border图形（制图）"></a>border图形（制图）</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">50px</span> solid transparent;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border-top</span>: <span class="number">50px</span> solid red;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transform-origin</span>: center <span class="number">25%</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">transition</span>: all <span class="number">1s</span> ease;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 旋转中心 */</span></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 旋转角度 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">180deg</span>);</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码呈现三角形</p>
-<p>参考网址：<a href="https://css-tricks.com/the-shapes-of-css/">https://css-tricks.com/the-shapes-of-css/</a></p>
-<h1 id="CSS精灵图"><a href="#CSS精灵图" class="headerlink" title="CSS精灵图"></a>CSS精灵图</h1><p>精灵图：将某个网站的多张图片集中到一张图片上，前端课利用CSS的定位等布局来显示对应的图片部分，减少前端请求服务端的次数（前端性能优化的一种）</p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>border图形（制图）</tag>
-        <tag>CSS精灵图</tag>
       </tags>
   </entry>
   <entry>
@@ -1122,23 +1122,25 @@
 <ul>
 <li><p><strong>属性</strong>：</p>
 </li>
-<li><p><strong>public,previate</strong></p>
+<li><p><strong>public和prevate</strong></p>
 <p><code>public</code> 表示该资源可以被所有客户端和代理服务器缓存，</p>
 <p> <code>private</code> 表示该资源仅能客户端缓存。默认值是 <code>private</code>，当设置了 <code>s-maxage</code> 的时候表示允许代理服务器缓存，相当于 <code>public</code>。</p>
 </li>
-<li><p><code>Max-Age</code>和<code>S-Maxage</code>：表示资源的有效期，值为number，秒钟。</p>
+<li><p><strong>Max-Age和S-Maxage</strong>：表示资源的有效期，值为number，秒钟。</p>
 <ul>
 <li>时间的计算起点是响应报文的创建时刻（即 Date 字段，也就是离开服务器的时刻），而不是客户端收到报文的时刻，也就是说包含了在链路传输过程中所有节点所停留的时间。</li>
 <li>服务器设定“max-age&#x3D;5”，但因为网络质量很糟糕，等浏览器收到响应报文已经过去了 4 秒，那么这个资源在客户端就最多能够再存 1 秒钟，之后就会失效。</li>
-<li>两者是 <code>cache-control</code> 的主要字段，它们是一个数字，表示资源过了多少秒之后变为无效。在浏览器中，<code>max-age</code> 和 <code>s-maxage</code> 都起作用，而且 <code>s-maxage</code> 的优先级高于 <code>max-age</code>。在代理服务器中，只有 <code>s-maxage</code> 起作用。 可以通过设置 <code>max-age</code> 为 0 表示立马过期来向服务器请求资源。</li>
+<li>两者是 <code>cache-control</code> 的主要字段，它们是一个数字，表示资源过了多少秒之后变为无效。在浏览器中，<code>max-age</code> 和 <code>s-maxage</code> 都起作用，而且 <code>s-maxage</code> 的优先级高于 <code>max-age</code>。<strong>在代理服务器中，只有 <code>s-maxage</code> 起作用</strong>。 可以通过设置 <code>max-age</code> 为 0 表示立马过期来向服务器请求资源。</li>
 </ul>
 </li>
 <li><p><strong>no-store</strong>：不允许缓存，用于某些变化非常频繁的数据，例如秒杀页面；</p>
 </li>
-<li><p><strong>no-cache</strong>：它的字面含义容易与 no-store 搞混，实际的意思并不是不允许缓存，而是<strong>可以缓存</strong>，但在使用之前必须要去服务器验证是否过期，是否有最新的版本，如果有就使用最新的数据.</p>
+<li><p><strong>no-cache</strong>：并不是不允许缓存，而是<strong>可以缓存</strong>，但在使用之前必须要去服务器验证是否过期，是否有最新的版本，如果有就使用最新的数据<strong>（协商缓存）</strong>。</p>
 <ul>
 <li>即：no-cache总是使用服务端的最新数据，如果没有最新的数据在使用本地缓存.</li>
 <li>但是,在使用no-cache属性时,也向服务端发送了一次请求,同样有效率损耗,但是这个报文很小,不像是最新的资源,会传输最完整的报文,导致成本高.</li>
+<li>由于<strong>no-cache和no-store</strong>都不考虑缓存情况而是直接与服务器交互，所以当 <code>no-cache</code> 和 <code>no-store</code> 存在时会直接忽略 <code>max-age</code> 等。</li>
+<li>如果<strong>Cache-Control</strong>没有设置<strong>no-cache</strong>和<strong>no-store</strong>属性，则默认进行强缓存（本都磁盘读取）。</li>
 </ul>
 </li>
 <li><p><strong>must-revalidate</strong>：如果缓存不过期就可以继续使用，但过期了如果还想用就必须去服务器验证。</p>
@@ -1156,12 +1158,15 @@
 <p>当浏览器多次刷新，会发现每次得到的随机数还是会变化</p>
 <p>原因是：</p>
 <ul>
-<li>浏览器会在请求头里加一个“<strong>Cache-Control: max-age&#x3D;0</strong>”。因为 max-age 是“生存时间”，max-age&#x3D;0 表示需要最新的数据，而本地缓存里的数据至少保存了几秒钟，所以浏览器就不会使用缓存，而是向服务器发请求。</li>
+<li>浏览器会在请求头里加一个“<strong>Cache-Control: max-age&#x3D;0</strong>”。因为 max-age 是“生存时间”，max-age&#x3D;0 表示需要最新的数据，而本地缓存里的数据至少保存了几秒钟，所以浏览器就不会使用缓存，而是向服务器发请求。<ul>
+<li>即：按F5刷新页面，浏览器直接让缓存过期，与服务端进行<strong>协商缓存</strong>。</li>
+</ul>
+</li>
 <li>服务器看到 max-age&#x3D;0，也就会用一个最新生成的报文回应浏览器。</li>
-<li>Ctrl+F5 的“强制刷新”又是什么样的呢？它其实是发了一个“<strong>Cache-Control: no-cache</strong>”，<strong>含义和“max-age&#x3D;0”基本一样</strong>，就看后台的服务器怎么理解，通常两者的效果是相同的。</li>
+<li>Ctrl+F5 的“强制刷新”又是什么样的呢？它其实是发了一个“<strong>Cache-Control: no-cache</strong>”（浏览器强制设置），<strong>含义和“max-age&#x3D;0”基本一样</strong>，强制获取最新的资源，就连 <code>if-modified-since</code> 等其他缓存协议字段都会被吃掉。</li>
 </ul>
 <p>点击浏览器的“前进”“后退”按钮，再看开发者工具，发现“from disk cache”的字样，意思是没有发送网络请求，而是读取的磁盘上的缓存。</p>
-<p><img src="/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89.assets/image-20220723182348017.png" alt="image-20220723182348017"></p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220723182348017.png" alt="图示"></p>
 <p>可以理解为：在<strong>“前进”“后退”“跳转”这些重定向动作中浏览器不会“夹带私货”</strong>，只用最基本的请求头，没有“Cache-Control”，所以就会检查缓存，直接利用之前的资源，不再进行网络通信。</p>
 <h2 id="条件请求"><a href="#条件请求" class="headerlink" title="条件请求"></a>条件请求</h2><p><strong>条件请求产生的原因：浏览器用“Cache-Control”做缓存控制只能是刷新数据，不能很好地利用缓存数据，又因为缓存会失效，使用前还必须要去服务器验证是否是最新版。</strong></p>
 <p>浏览器可以用两个连续的请求组成“验证动作”：先是一个 HEAD，获取资源的修改时间等元信息，然后与缓存数据比较，如果没有改动就使用缓存，节省网络流量，否则就再发一个 GET 请求，获取最新的版本。</p>
@@ -1172,22 +1177,27 @@
 <p>和<strong>If-None-Match</strong>配合的<strong>响应字段是Etags</strong></p>
 <p>第一种：</p>
 <ul>
-<li><p><strong>Last-modified</strong>：（响应头字段）表示文件的最后修改时间。在浏览器<strong>第一次</strong>请求某一个URL时，服务器端的返回状态会是200，内容是客户端请求的资源，同时有一个<strong>Last-Modified</strong>的属性标记此文件在服务期端最后被修改的时间。</p>
-</li>
-<li><p><strong>if-Modified-Since</strong>：（请求头字段）客户端<strong>第二次</strong>请求此URL时，根据 HTTP 协议的规定，浏览器会向服务器传送If-Modified-Since 报头（在第一次访问时的时间被存储的值），询问该时间之后文件是否有被修改过，具体的时间表示<strong>本地浏览器存储的文件修改时间</strong>。</p>
-<ul>
+<li><strong>Last-modified</strong>：（响应头字段）表示文件的最后修改时间。在浏览器<strong>第一次</strong>请求某一个URL时，服务器端的返回状态会是200，内容是客户端请求的资源，同时有一个<strong>Last-Modified</strong>的属性标记此文件在服务期端最后被修改的时间。</li>
+<li>在客户端后来的请求中（非第一次），服务端会对比该字段和资源的最后修改时间（客户端携带的If-Modify-Since字段），若一致则证明没有被修改，告知浏览器可直接使用缓存并返回 304；若不一致则直接返回修改后的资源，并修改 <code>last-modified</code> 为新的值。</li>
+<li><strong>if-Modified-Since</strong>：（请求头字段）客户端<strong>第二次以及之后请求</strong>请求此URL时，根据 HTTP 协议的规定，浏览器会向服务器传送If-Modified-Since 报头（在第一次访问时的时间被存储的值），询问该时间之后文件是否有被修改过，具体的时间表示<strong>本地浏览器存储的文件修改时间</strong>。<ul>
 <li>如果服务器端的资源没有变化，则时间一致，自动返回HTTP状态码304（Not Changed.）状态码，内容为空，客户端接到之后，就直接把本地缓存文件显示到浏览器中，这样就节省了传输数据量。</li>
 <li>如果服务器端资源发生改变或者重启服务器时，时间不一致，就返回HTTP状态码200和新的文件内容，客户端接到之后，会丢弃旧文件，把新文件缓存起来，并显示到浏览器中。</li>
 </ul>
 </li>
 </ul>
+<p>缺点：</p>
+<ol>
+<li>只要编辑了（例如增加无用的空格），不管内容是否真的有改变，都会以这最后修改的时间作为判断依据，当成新资源返回，从而导致了没必要的请求响应，而这正是缓存本来的作用，即避免没必要的请求。</li>
+<li>时间的精确度只能到秒，如果在一秒内的修改是检测不到更新的，仍会告知浏览器使用旧的缓存。</li>
+</ol>
 <p>第二种：</p>
+<p>第二种方式的出现解决了第一种方式的缺点。</p>
 <ul>
 <li><strong>If-None-Match</strong>：（请求头字段）：服务端传过来的<strong>Etag的值</strong></li>
 <li><strong>ETag</strong>：（通用字段）“Entity Tag”，实体标签，<strong>资源的唯一标识</strong>，主要是用来解决修改时间无法准确区分文件变化的问题。<ul>
 <li>比如，一个文件在一秒内修改了多次，但因为修改时间是秒级，所以这一秒内的新版本无法区分。</li>
-<li>再比如，一个文件定期更新，但有时会是同样的内容，实际上没有变化，用修改时间就会误以为发生了变化，传送给浏览器就会浪费带宽。</li>
-<li>使用 ETag 就可以精确地识别资源的变动情况，让浏览器能够更有效地利用缓存。</li>
+<li>比如，一个文件定期更新，但有时会是同样的内容，实际上没有变化，用修改时间就会误以为发生了变化，传送给浏览器就会浪费带宽。</li>
+<li>使用 ETag 就可以精确地识别资源的变动情况，只要文件有改动，就生成最新的<strong>Etag</strong>的值（解决上述缺点2），让浏览器能够更有效地利用缓存。</li>
 <li>ETag的强弱之分：<ul>
 <li>强 ETag 要求资源在字节级别必须完全相符，</li>
 <li>弱 ETag 在值前有个“W&#x2F;”标记，只要求资源在语义上没有变化，但内部可能会有部分发生了改变（例如 HTML 里的标签顺序调整，或者多了几个空格）。</li>
@@ -1210,7 +1220,12 @@
 <p>如果资源没有变，服务器就回应一个“304 Not Modified”，表示缓存依然有效，浏览器就可以更新一下有效期，然后放心大胆地使用缓存了。</p>
 <p>条件请求里其他的三个头字段是“<strong>If-Unmodified-Since”“If-Match”和“If-Range”</strong>，掌握了“if-Modified-Since”和“If-None-Match”，可以轻易地“举一反三”。</p>
 <ul>
-<li>注意:<strong>服务器又设置了Cache-Control:max-age和Expires时,会同时使用,也就是说在完全匹配If-Modified-Since和If-None-Match,即检查完修改时间和Etag之后,服务器才能返回304.</strong></li>
+<li>注意:<ul>
+<li><strong>服务器又设置了Cache-Control:max-age和Expires时,会同时使用,也就是说在完全匹配If-Modified-Since和If-None-Match,即检查完修改时间和Etag之后,服务器才能返回304.</strong></li>
+<li>Expires属于HTTP1.0规定的缓存字段，若两者在响应头中均出现，<strong>Cache-Control的优先级更高</strong></li>
+<li>Etag比last-modify优先级高。</li>
+</ul>
+</li>
 </ul>
 <p>这两种方式，</p>
 <p>知识补充：</p>
@@ -1234,8 +1249,8 @@
 </li>
 <li>cache-control中的private识别:缓存策略取决于服务器，它认为这个缓存只能存放在客户端，不能存放在代理上，就设置private。</li>
 <li>强缓存和协商缓存<ul>
-<li>强缓存:浏览器直接从本地缓存中获取数据，不与服务器进行交互</li>
-<li>协商缓存:浏览器发送请求到服务器，服务器判断是否可使用本地缓存<ul>
+<li>强缓存:浏览器直接从本地缓存中获取数据，不与服务器进行交互,返回的状态码是 <strong>200</strong></li>
+<li>协商缓存:浏览器发送请求到服务器，服务器判断是否可使用本地缓存.<strong>会去服务器比对</strong>，若没改变才直接读取本地缓存，返回的状态码是 <strong>304</strong>。<ul>
 <li>Last-Modify和If-Modify-Since搭配</li>
 <li>Etag和If-None-Match搭配</li>
 </ul>
@@ -1252,6 +1267,7 @@
       <categories>
         <category>HTTP</category>
         <category>计算机网络</category>
+        <category>缓存</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
@@ -1262,6 +1278,8 @@
         <tag>跨站请求伪造</tag>
         <tag>XSS</tag>
         <tag>XSRF</tag>
+        <tag>强缓存</tag>
+        <tag>协商缓存</tag>
       </tags>
   </entry>
   <entry>
@@ -1387,6 +1405,67 @@
       </categories>
       <tags>
         <tag>js异常处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node学习笔记（一）</title>
+    <url>/2022/07/12/node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>node是使用C++、C、js（给js本身调用时提供的一些api）等编写的</p>
+<p>node的核心层：<strong>libuv是由C编写的库</strong>；底层通过对操作系统的一些调用由<strong>中间层</strong><code>libuv</code>来完成</p>
+<p>libuv提供了<strong>事件循环、文件系统读写、网络IO、线程池</strong>等等内容</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构"></p>
+<center>node架构图</center>
+
+<h1 id="Node应用场景"><a href="#Node应用场景" class="headerlink" title="Node应用场景"></a>Node应用场景</h1><ul>
+<li>前端开发的库都是以node包的形式进行管理；</li>
+<li>npm，cnpm、yarn、pnpm成为前端开发使用最多的工具；</li>
+<li>使用Nodejs作为web服务器开发、中间件、代理服务器；</li>
+<li>大量项目需要借助Node.js完成前后端渲染的同构应用;（SSR）</li>
+<li>资深前端工程师需要为项目编写脚本工具；（前端工程师编写脚本通常会使用JavaScript）</li>
+<li>很多企业在使用Electron来开发桌面应用程序;（Electron是基于Node的并且需要Node环境）</li>
+</ul>
+<h1 id="Node版本管理"><a href="#Node版本管理" class="headerlink" title="Node版本管理"></a>Node版本管理</h1><p>macOS：n&#x2F;nvm</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm i -g n</span><br><span class="line">n --version</span><br><span class="line"><span class="comment">// 安装最新的稳定版本</span></span><br><span class="line">n lts</span><br><span class="line"><span class="comment">// 安装最新的版本</span></span><br><span class="line">n latest</span><br><span class="line"><span class="comment">// 查看所有的版本</span></span><br><span class="line">n</span><br></pre></td></tr></table></figure>
+
+<p>window：nvm-windows</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装最新的node版本n</span></span><br><span class="line">nvm install latest</span><br><span class="line"><span class="comment">// 罗列目前安装的所有版本</span></span><br><span class="line">nvm list</span><br><span class="line"><span class="comment">// 版本切换(需要管理员权限)</span></span><br><span class="line">mvn use</span><br></pre></td></tr></table></figure>
+
+<h1 id="Node的输入和输出"><a href="#Node的输入和输出" class="headerlink" title="Node的输入和输出"></a>Node的输入和输出</h1><h2 id="process（输入）"><a href="#process（输入）" class="headerlink" title="process（输入）"></a>process（输入）</h2><ul>
+<li>process（进程对象）可用来获取用户终端输入</li>
+</ul>
+<p>示例：</p>
+<p>在终端输入</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node test.<span class="property">js</span> <span class="number">10</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>test.js文件代码如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// argv=&gt;arguments vector</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(process.<span class="property">argv</span>);</span><br><span class="line"><span class="comment">// [ &#x27;D:\\nvmNode\\node.exe&#x27;, &#x27;F:\\myBlog\\test.js&#x27;, &#x27;10&#x27;, &#x27;20&#x27; ]</span></span><br><span class="line"><span class="comment">// 第一个参数是当前node所在的文件夹，第二个参数是需要运行的js文件，之后的参数是用户的输入</span></span><br><span class="line"><span class="keyword">let</span> [, , str1, str2] = process.<span class="property">argv</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((str1 + str2).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他应用应用场景</span></span><br><span class="line"><span class="comment">// 以下命令可以让webpack来判断当前所处的是开发环境还是生产环境</span></span><br><span class="line">node ./webpack.<span class="property">config</span>.<span class="property">js</span> env=development</span><br></pre></td></tr></table></figure>
+
+<p>process还能够查看系统的其他一些信息：<strong>操作系统类型</strong>、<strong>node版本</strong>和<strong>V8的版本</strong>等。</p>
+<h3 id="其他方法："><a href="#其他方法：" class="headerlink" title="其他方法："></a>其他方法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">nextTick</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="console（输出）"><a href="#console（输出）" class="headerlink" title="console（输出）"></a>console（输出）</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 清空控制台</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">clear</span>();</span><br><span class="line"><span class="comment">// 输出调用栈</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">trace</span>()</span><br></pre></td></tr></table></figure>
+
+<h1 id="Node全局对象"><a href="#Node全局对象" class="headerlink" title="Node全局对象"></a>Node全局对象</h1><h2 id="特殊的全局对象"><a href="#特殊的全局对象" class="headerlink" title="特殊的全局对象"></a>特殊的全局对象</h2><p><code>__dirname</code>、<code>__filename</code>、<code>exports</code>、<code>module</code>、<code>require()</code></p>
+<p>这些全局对象是模块中的变量，只是每个模块都有，看起来像全局变量，但是在命令行交互是不能使用的。</p>
+<ul>
+<li>__dirname：表示当前文件所在的目录；</li>
+<li>__filename：表示当前文件所在的目录以及文件名；</li>
+</ul>
+<p>注意：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> === <span class="built_in">exports</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="定时器函数"><a href="#定时器函数" class="headerlink" title="定时器函数"></a>定时器函数</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">setImmediate</span><br><span class="line"><span class="comment">// 添加到下一次的tick队列</span></span><br><span class="line">process.<span class="property">nextTick</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h2><p>在node环境下，全局对象为<code>global</code>；在浏览器环境下，全局对象为<code>window</code>；在后来的版中，使用统一的名称<code>globalThis</code>作为全局对象，在浏览器环境指向<code>this</code>，在node环境指向<code>global</code>。</p>
+<p>说明：使用<code>var</code>声明的变量在浏览器环境下会自动加入到window的一个属性中，在node环境下不会。</p>
+]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -1538,83 +1617,6 @@
       </tags>
   </entry>
   <entry>
-    <title>前端相关文档</title>
-    <url>/2022/06/03/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p><strong>精灵图制作：</strong><a href="https://www.toptal.com/developers/css/sprite-generator">https://www.toptal.com/developers/css/sprite-generator</a></p>
-<p><strong>确定精灵图位置：</strong><a href="http://www.spritecow.com/">http://www.spritecow.com/</a></p>
-<p><strong>阿里字体图标库：</strong><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p><strong>LESS-&gt;CSS：</strong><a href="https://lesscss.org/less-preview/">https://lesscss.org/less-preview/</a></p>
-<p><strong>移动端适配（阿里）：</strong><a href="https://github.com/amfe/lib-flexible">https://github.com/amfe/lib-flexible</a><br><strong>npm命令：</strong><a href="https://docs.npmjs.com/cli/v8/commands">https://docs.npmjs.com/cli/v8/commands</a><br><strong>pnpm：</strong><a href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></p>
-]]></content>
-      <categories>
-        <category>开发文档</category>
-      </categories>
-      <tags>
-        <tag>前端开发相关文档</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>node学习笔记（一）</title>
-    <url>/2022/07/12/node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>node是使用C++、C、js（给js本身调用时提供的一些api）等编写的</p>
-<p>node的核心层：<strong>libuv是由C编写的库</strong>；底层通过对操作系统的一些调用由<strong>中间层</strong><code>libuv</code>来完成</p>
-<p>libuv提供了<strong>事件循环、文件系统读写、网络IO、线程池</strong>等等内容</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构"></p>
-<center>node架构图</center>
-
-<h1 id="Node应用场景"><a href="#Node应用场景" class="headerlink" title="Node应用场景"></a>Node应用场景</h1><ul>
-<li>前端开发的库都是以node包的形式进行管理；</li>
-<li>npm，cnpm、yarn、pnpm成为前端开发使用最多的工具；</li>
-<li>使用Nodejs作为web服务器开发、中间件、代理服务器；</li>
-<li>大量项目需要借助Node.js完成前后端渲染的同构应用;（SSR）</li>
-<li>资深前端工程师需要为项目编写脚本工具；（前端工程师编写脚本通常会使用JavaScript）</li>
-<li>很多企业在使用Electron来开发桌面应用程序;（Electron是基于Node的并且需要Node环境）</li>
-</ul>
-<h1 id="Node版本管理"><a href="#Node版本管理" class="headerlink" title="Node版本管理"></a>Node版本管理</h1><p>macOS：n&#x2F;nvm</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm i -g n</span><br><span class="line">n --version</span><br><span class="line"><span class="comment">// 安装最新的稳定版本</span></span><br><span class="line">n lts</span><br><span class="line"><span class="comment">// 安装最新的版本</span></span><br><span class="line">n latest</span><br><span class="line"><span class="comment">// 查看所有的版本</span></span><br><span class="line">n</span><br></pre></td></tr></table></figure>
-
-<p>window：nvm-windows</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装最新的node版本n</span></span><br><span class="line">nvm install latest</span><br><span class="line"><span class="comment">// 罗列目前安装的所有版本</span></span><br><span class="line">nvm list</span><br><span class="line"><span class="comment">// 版本切换(需要管理员权限)</span></span><br><span class="line">mvn use</span><br></pre></td></tr></table></figure>
-
-<h1 id="Node的输入和输出"><a href="#Node的输入和输出" class="headerlink" title="Node的输入和输出"></a>Node的输入和输出</h1><h2 id="process（输入）"><a href="#process（输入）" class="headerlink" title="process（输入）"></a>process（输入）</h2><ul>
-<li>process（进程对象）可用来获取用户终端输入</li>
-</ul>
-<p>示例：</p>
-<p>在终端输入</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node test.<span class="property">js</span> <span class="number">10</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>test.js文件代码如下</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// argv=&gt;arguments vector</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(process.<span class="property">argv</span>);</span><br><span class="line"><span class="comment">// [ &#x27;D:\\nvmNode\\node.exe&#x27;, &#x27;F:\\myBlog\\test.js&#x27;, &#x27;10&#x27;, &#x27;20&#x27; ]</span></span><br><span class="line"><span class="comment">// 第一个参数是当前node所在的文件夹，第二个参数是需要运行的js文件，之后的参数是用户的输入</span></span><br><span class="line"><span class="keyword">let</span> [, , str1, str2] = process.<span class="property">argv</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((str1 + str2).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他应用应用场景</span></span><br><span class="line"><span class="comment">// 以下命令可以让webpack来判断当前所处的是开发环境还是生产环境</span></span><br><span class="line">node ./webpack.<span class="property">config</span>.<span class="property">js</span> env=development</span><br></pre></td></tr></table></figure>
-
-<p>process还能够查看系统的其他一些信息：<strong>操作系统类型</strong>、<strong>node版本</strong>和<strong>V8的版本</strong>等。</p>
-<h3 id="其他方法："><a href="#其他方法：" class="headerlink" title="其他方法："></a>其他方法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">nextTick</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="console（输出）"><a href="#console（输出）" class="headerlink" title="console（输出）"></a>console（输出）</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 清空控制台</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">clear</span>();</span><br><span class="line"><span class="comment">// 输出调用栈</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">trace</span>()</span><br></pre></td></tr></table></figure>
-
-<h1 id="Node全局对象"><a href="#Node全局对象" class="headerlink" title="Node全局对象"></a>Node全局对象</h1><h2 id="特殊的全局对象"><a href="#特殊的全局对象" class="headerlink" title="特殊的全局对象"></a>特殊的全局对象</h2><p><code>__dirname</code>、<code>__filename</code>、<code>exports</code>、<code>module</code>、<code>require()</code></p>
-<p>这些全局对象是模块中的变量，只是每个模块都有，看起来像全局变量，但是在命令行交互是不能使用的。</p>
-<ul>
-<li>__dirname：表示当前文件所在的目录；</li>
-<li>__filename：表示当前文件所在的目录以及文件名；</li>
-</ul>
-<p>注意：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> === <span class="built_in">exports</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="定时器函数"><a href="#定时器函数" class="headerlink" title="定时器函数"></a>定时器函数</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">setImmediate</span><br><span class="line"><span class="comment">// 添加到下一次的tick队列</span></span><br><span class="line">process.<span class="property">nextTick</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h2><p>在node环境下，全局对象为<code>global</code>；在浏览器环境下，全局对象为<code>window</code>；在后来的版中，使用统一的名称<code>globalThis</code>作为全局对象，在浏览器环境指向<code>this</code>，在node环境指向<code>global</code>。</p>
-<p>说明：使用<code>var</code>声明的变量在浏览器环境下会自动加入到window的一个属性中，在node环境下不会。</p>
-]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>pnpm学习笔记</title>
     <url>/2022/07/11/pnpm%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="传统的包管理工具劣势"><a href="#传统的包管理工具劣势" class="headerlink" title="传统的包管理工具劣势"></a>传统的包管理工具劣势</h1><ul>
@@ -1677,7 +1679,7 @@
 <p>说明：</p>
 <ul>
 <li>项目的node_modules文件夹下，仅有axios依赖（本项目仅仅依赖axios库，就避免了使用commonjs或者esmodule引入依赖时，不可以访问本不属于当前项目所设定的依赖包）；</li>
-<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#97;&#x78;&#x69;&#111;&#x73;&#x40;&#48;&#46;&#50;&#55;&#x2e;&#x32;">&#97;&#x78;&#x69;&#111;&#x73;&#x40;&#48;&#46;&#50;&#55;&#x2e;&#x32;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
+<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#x61;&#120;&#105;&#111;&#x73;&#x40;&#x30;&#46;&#x32;&#x37;&#46;&#50;">&#x61;&#120;&#105;&#111;&#x73;&#x40;&#x30;&#46;&#x32;&#x37;&#46;&#50;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
 <li>在<code>axios@0.27.2/node_modules</code>目录之下，有<code>axios</code>的其他依赖软链接，其中，<code>form-data</code>的目录结构和<code>axios@0.27.2/node_modules</code>类似</li>
 </ul>
 <h2 id="pnpm的存储store"><a href="#pnpm的存储store" class="headerlink" title="pnpm的存储store"></a>pnpm的存储store</h2><ul>
@@ -1721,28 +1723,19 @@
       </tags>
   </entry>
   <entry>
-    <title>手写promise</title>
-    <url>/2022/04/15/%E6%89%8B%E5%86%99promise/</url>
-    <content><![CDATA[<h1 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h1><p>ECMAscript 6 原生提供了 Promise 对象。</p>
-<p>Promise 对象代表了未来将要发生的事件，用来传递异步操作的消息。</p>
-<h1 id="Promise-对象有以下两个特点"><a href="#Promise-对象有以下两个特点" class="headerlink" title="Promise 对象有以下两个特点:"></a>Promise 对象有以下两个特点:</h1><p>对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：</p>
-<ul>
-<li>pending: 初始状态，不是成功或失败状态。</li>
-<li>fulfilled: 意味着操作成功完成。</li>
-<li>rejected: 意味着操作失败。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 参考PromiseA+规范,同时根据es自身的实现逻辑添加其他操作</span></span><br><span class="line"><span class="comment">// https://promisesaplus.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态字符串(常量)</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_PENDING</span> = <span class="string">&#x27;pending&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> = <span class="string">&#x27;fulfilled&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_REJECTED</span> = <span class="string">&#x27;rejected&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工具函数</span></span><br><span class="line"><span class="comment">// 公共逻辑抽取</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">execFunctionWithCatchError</span>(<span class="params">fn, data, resolve, reject</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="title function_">fn</span>(data);</span><br><span class="line">    <span class="title function_">resolve</span>(result)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="title function_">reject</span>(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPromise</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_PENDING</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">reason</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onRejectedFns</span> = [];</span><br><span class="line">    <span class="comment">// 调用resolve状态会改变为fulfilled(resolved)</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">resolve</span> = (<span class="params">value</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_FULFILLED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; fulfilled</span></span><br><span class="line">          <span class="comment">// 保存fulfilled的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">          <span class="comment">// 执行then方法的onFulfilled回调(第一个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">value</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 调用reject状态会改变为rejected</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">reject</span> = (<span class="params">reason</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_REJECTED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; rejected</span></span><br><span class="line">          <span class="comment">// 保存rejected的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">reason</span> = reason;</span><br><span class="line">          <span class="comment">// 执行then方法的onRejected回调(第二个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">reason</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="title function_">executor</span>(resolve, reject);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">then</span>(<span class="params">onFulfilled, onRejected</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果reject或者throw异常,但是没有传入then的第二个回调,需要把这个异常或者reason一直抛直到被catch捕获</span></span><br><span class="line">    onRejected = onRejected || (<span class="function"><span class="params">err</span> =&gt;</span> &#123; <span class="keyword">throw</span> err &#125;);</span><br><span class="line">    <span class="comment">// 如果resolve没有传入,则会造成value没有处理的回调,会造成链式调用的断层</span></span><br><span class="line">    onFulfilled = onFulfilled || (<span class="function"><span class="params">value</span> =&gt;</span> value);</span><br><span class="line">    <span class="comment">// then方法返回一个MyPromise对象</span></span><br><span class="line">    <span class="comment">// resolve的value或者reject的reason都可以被认为是then方法的返回值</span></span><br><span class="line">    <span class="comment">// 使用resolve还是reject取决于传入的onFulfilled, onRejected的返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 1.如果执行then时,状态已经确定了,直接执行onFulfilled或onRejected,不用添加到执行队列里面</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> &amp;&amp; <span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">        <span class="comment">//   resolve(value);</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_REJECTED</span> &amp;&amp; <span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">        <span class="comment">//   // 因为then方法的第二个回调也是返回一个MyPromise对象,所以此处也需要调用resolve而不是reject</span></span><br><span class="line">        <span class="comment">//   resolve(reason)</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 2.如果执行then时,状态还是pending,添加到执行队列里面</span></span><br><span class="line">      <span class="comment">// 因为promise的then可链式调用,保存onFulfilled, onRejected由数组来保存</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">            <span class="comment">//   resolve(value);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">            <span class="comment">//   resolve(reason);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// catch方法和finaly方法属于es6特有,不属于promiseA+规范</span></span><br><span class="line">  <span class="keyword">catch</span>(onRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="literal">undefined</span>, onRejected);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">finally</span>(<span class="params">onFinally</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 类方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">resolve</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(value);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">reject</span>(<span class="params">reason</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">reject</span>(reason);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// all</span></span><br><span class="line">  <span class="comment">// 只有所有的promise都resolve,才resolve</span></span><br><span class="line">  <span class="comment">// 有一个promise失败,就reject</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">all</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = []</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 此处保证了resolve返回的顺序和传入的自定义promise顺序一致</span></span><br><span class="line">          values[index] = res</span><br><span class="line">          count++;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(err)</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// allSettled</span></span><br><span class="line">  <span class="comment">// 不执行reject,只执行resolve</span></span><br><span class="line">  <span class="comment">// 返回的promise的包括status和value(reason)</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">allSettled</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;fulfilled&#x27;</span>,</span><br><span class="line">            <span class="attr">value</span>: res</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          count++</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;rejected&#x27;</span>,</span><br><span class="line">            <span class="attr">reason</span>: err</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// race</span></span><br><span class="line">  <span class="comment">// 返回最先完成resolve或者reject的promise的执行结果</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">race</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, reject)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// any</span></span><br><span class="line">  <span class="comment">// 返回第一个resolve的promise</span></span><br><span class="line">  <span class="comment">// 若所有的promise都reject,则reject(new AggregateError(reasons))</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">any</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reasons = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          reasons[index] = err;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="comment">// reject(&#x27;all failed&#x27;);</span></span><br><span class="line">            <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">AggregateError</span>(reasons));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">1</span>)</span><br><span class="line">  &#125;, <span class="number">4000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise2 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">2</span>)</span><br><span class="line">  &#125;, <span class="number">5000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> promise3 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">3</span>)</span><br><span class="line">  &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title class_">MyPromise</span>.<span class="title function_">any</span>([promise, promise2, promise3]).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;err&#x27;</span>, err.<span class="property">errors</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+    <title>前端相关文档</title>
+    <url>/2022/06/03/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p><strong>精灵图制作：</strong><a href="https://www.toptal.com/developers/css/sprite-generator">https://www.toptal.com/developers/css/sprite-generator</a></p>
+<p><strong>确定精灵图位置：</strong><a href="http://www.spritecow.com/">http://www.spritecow.com/</a></p>
+<p><strong>阿里字体图标库：</strong><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p><strong>LESS-&gt;CSS：</strong><a href="https://lesscss.org/less-preview/">https://lesscss.org/less-preview/</a></p>
+<p><strong>移动端适配（阿里）：</strong><a href="https://github.com/amfe/lib-flexible">https://github.com/amfe/lib-flexible</a><br><strong>npm命令：</strong><a href="https://docs.npmjs.com/cli/v8/commands">https://docs.npmjs.com/cli/v8/commands</a><br><strong>pnpm：</strong><a href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></p>
 ]]></content>
       <categories>
-        <category>js</category>
-        <category>js实现原理</category>
+        <category>开发文档</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>前端</tag>
-        <tag>promise</tag>
-        <tag>es6</tag>
+        <tag>前端开发相关文档</tag>
       </tags>
   </entry>
   <entry>
@@ -1856,11 +1849,11 @@
         <category>js实现原理</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>迭代器</tag>
         <tag>生成器</tag>
         <tag>iterator</tag>
         <tag>generator</tag>
+        <tag>js</tag>
         <tag>await</tag>
         <tag>async</tag>
       </tags>
@@ -1874,6 +1867,31 @@
         <tag>杂七杂八</tag>
         <tag>弹性</tag>
         <tag>弹性相关案例</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写promise</title>
+    <url>/2022/04/15/%E6%89%8B%E5%86%99promise/</url>
+    <content><![CDATA[<h1 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h1><p>ECMAscript 6 原生提供了 Promise 对象。</p>
+<p>Promise 对象代表了未来将要发生的事件，用来传递异步操作的消息。</p>
+<h1 id="Promise-对象有以下两个特点"><a href="#Promise-对象有以下两个特点" class="headerlink" title="Promise 对象有以下两个特点:"></a>Promise 对象有以下两个特点:</h1><p>对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：</p>
+<ul>
+<li>pending: 初始状态，不是成功或失败状态。</li>
+<li>fulfilled: 意味着操作成功完成。</li>
+<li>rejected: 意味着操作失败。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 参考PromiseA+规范,同时根据es自身的实现逻辑添加其他操作</span></span><br><span class="line"><span class="comment">// https://promisesaplus.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态字符串(常量)</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_PENDING</span> = <span class="string">&#x27;pending&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> = <span class="string">&#x27;fulfilled&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_REJECTED</span> = <span class="string">&#x27;rejected&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工具函数</span></span><br><span class="line"><span class="comment">// 公共逻辑抽取</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">execFunctionWithCatchError</span>(<span class="params">fn, data, resolve, reject</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="title function_">fn</span>(data);</span><br><span class="line">    <span class="title function_">resolve</span>(result)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="title function_">reject</span>(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPromise</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_PENDING</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">reason</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onRejectedFns</span> = [];</span><br><span class="line">    <span class="comment">// 调用resolve状态会改变为fulfilled(resolved)</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">resolve</span> = (<span class="params">value</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_FULFILLED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; fulfilled</span></span><br><span class="line">          <span class="comment">// 保存fulfilled的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">          <span class="comment">// 执行then方法的onFulfilled回调(第一个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">value</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 调用reject状态会改变为rejected</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">reject</span> = (<span class="params">reason</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_REJECTED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; rejected</span></span><br><span class="line">          <span class="comment">// 保存rejected的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">reason</span> = reason;</span><br><span class="line">          <span class="comment">// 执行then方法的onRejected回调(第二个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">reason</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="title function_">executor</span>(resolve, reject);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">then</span>(<span class="params">onFulfilled, onRejected</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果reject或者throw异常,但是没有传入then的第二个回调,需要把这个异常或者reason一直抛直到被catch捕获</span></span><br><span class="line">    onRejected = onRejected || (<span class="function"><span class="params">err</span> =&gt;</span> &#123; <span class="keyword">throw</span> err &#125;);</span><br><span class="line">    <span class="comment">// 如果resolve没有传入,则会造成value没有处理的回调,会造成链式调用的断层</span></span><br><span class="line">    onFulfilled = onFulfilled || (<span class="function"><span class="params">value</span> =&gt;</span> value);</span><br><span class="line">    <span class="comment">// then方法返回一个MyPromise对象</span></span><br><span class="line">    <span class="comment">// resolve的value或者reject的reason都可以被认为是then方法的返回值</span></span><br><span class="line">    <span class="comment">// 使用resolve还是reject取决于传入的onFulfilled, onRejected的返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 1.如果执行then时,状态已经确定了,直接执行onFulfilled或onRejected,不用添加到执行队列里面</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> &amp;&amp; <span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">        <span class="comment">//   resolve(value);</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_REJECTED</span> &amp;&amp; <span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">        <span class="comment">//   // 因为then方法的第二个回调也是返回一个MyPromise对象,所以此处也需要调用resolve而不是reject</span></span><br><span class="line">        <span class="comment">//   resolve(reason)</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 2.如果执行then时,状态还是pending,添加到执行队列里面</span></span><br><span class="line">      <span class="comment">// 因为promise的then可链式调用,保存onFulfilled, onRejected由数组来保存</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">            <span class="comment">//   resolve(value);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">            <span class="comment">//   resolve(reason);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// catch方法和finaly方法属于es6特有,不属于promiseA+规范</span></span><br><span class="line">  <span class="keyword">catch</span>(onRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="literal">undefined</span>, onRejected);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">finally</span>(<span class="params">onFinally</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 类方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">resolve</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(value);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">reject</span>(<span class="params">reason</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">reject</span>(reason);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// all</span></span><br><span class="line">  <span class="comment">// 只有所有的promise都resolve,才resolve</span></span><br><span class="line">  <span class="comment">// 有一个promise失败,就reject</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">all</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = []</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 此处保证了resolve返回的顺序和传入的自定义promise顺序一致</span></span><br><span class="line">          values[index] = res</span><br><span class="line">          count++;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(err)</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// allSettled</span></span><br><span class="line">  <span class="comment">// 不执行reject,只执行resolve</span></span><br><span class="line">  <span class="comment">// 返回的promise的包括status和value(reason)</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">allSettled</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;fulfilled&#x27;</span>,</span><br><span class="line">            <span class="attr">value</span>: res</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          count++</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;rejected&#x27;</span>,</span><br><span class="line">            <span class="attr">reason</span>: err</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// race</span></span><br><span class="line">  <span class="comment">// 返回最先完成resolve或者reject的promise的执行结果</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">race</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, reject)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// any</span></span><br><span class="line">  <span class="comment">// 返回第一个resolve的promise</span></span><br><span class="line">  <span class="comment">// 若所有的promise都reject,则reject(new AggregateError(reasons))</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">any</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reasons = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          reasons[index] = err;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="comment">// reject(&#x27;all failed&#x27;);</span></span><br><span class="line">            <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">AggregateError</span>(reasons));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">1</span>)</span><br><span class="line">  &#125;, <span class="number">4000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise2 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">2</span>)</span><br><span class="line">  &#125;, <span class="number">5000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> promise3 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">3</span>)</span><br><span class="line">  &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title class_">MyPromise</span>.<span class="title function_">any</span>([promise, promise2, promise3]).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;err&#x27;</span>, err.<span class="property">errors</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>js实现原理</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>前端</tag>
+        <tag>promise</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -1999,80 +2017,6 @@
       </tags>
   </entry>
   <entry>
-    <title>经济学原理浅学（二）</title>
-    <url>/2022/06/08/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86%E6%B5%85%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<p>在自由的、无管制的市场的力量建立了均衡价格，决定了交换的数量</p>
-<p>经济学原理之一：市场在通常情况下是有效率的.</p>
-<p>虽然均衡的状态是有效率的，但是并非每个人都满意的</p>
-<h1 id="价格控制"><a href="#价格控制" class="headerlink" title="价格控制"></a>价格控制</h1><p>实行价格控制通常是政府相信市场价格对买方或者卖方不公平.</p>
-<p><strong>两种价格控制</strong>:价格上限和价格下限,常常引发事与愿违的结果.(效率和公平损失)</p>
-<h2 id="价格上限"><a href="#价格上限" class="headerlink" title="价格上限"></a>价格上限</h2><p>法定最高价格</p>
-<p>政府实行价格上限两种可能的结果:价格上限高于均衡价格,价格上限低于均衡价格</p>
-<h4 id="价格上限高于均衡价格"><a href="#价格上限高于均衡价格" class="headerlink" title="价格上限高于均衡价格"></a>价格上限高于均衡价格</h4><p>价格上限高于均衡价格,价格上限没有限制性</p>
-<p>即:政府虽然制定了价格上限这个约束,但是这个约束条件没有限制性</p>
-<p>此时,市场对于该商品的需求量供应量均<strong>不变</strong></p>
-<h4 id="价格上限低于均衡价格"><a href="#价格上限低于均衡价格" class="headerlink" title="价格上限低于均衡价格"></a>价格上限低于均衡价格</h4><p>价格上限低于均衡价格,价格上限有限制性;</p>
-<p>即:政府制定的价格上限这个约束条件有限制性</p>
-<p>此时,市场对于该商品的需求量会增加,对于该商品的供应量会减小,中间差称为<strong>短缺</strong>(经济学定义)</p>
-<p><strong>其他条件不变的情况下</strong>,短缺与生产力和生产效率无关</p>
-<p>因为不管是生产力低下还是高效,基于市场的供求模型,供给和需求总会达到一个平衡点</p>
-<p>在这种场景下,政府如果制定的价格上限如果低于这个均衡价格,才会出现短缺的情况</p>
-<p>如果政府制定的价格上限高于均衡价格,那么不会出现短缺</p>
-<p>如果出现了短缺,在需求不变的情况下,可以通过增加供给来解决短缺问题.</p>
-<h5 id="直接结果"><a href="#直接结果" class="headerlink" title="直接结果"></a>直接结果</h5><p>供给量&lt;需求量</p>
-<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><ul>
-<li>70年代的食品(需要粮票去买);</li>
-<li>80年代的原材料(钢铁);</li>
-<li>90年代发售原始股</li>
-</ul>
-<h5 id="引出的问题"><a href="#引出的问题" class="headerlink" title="引出的问题"></a>引出的问题</h5><p>有限制作用的价格上限导致了<strong>配给</strong>,因为有短缺</p>
-<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
-<li>排队,先来后到<ul>
-<li>造成资源的浪费(时间)</li>
-</ul>
-</li>
-<li>卖者对买着的歧视(例如粮票,种族等,性别,走后门等)<ul>
-<li>票虽然不会造成资源浪费,但是持有该票的人不一定最想得到该资源的人</li>
-</ul>
-</li>
-</ul>
-<h2 id="价格下限"><a href="#价格下限" class="headerlink" title="价格下限"></a>价格下限</h2><p>法定最低价格</p>
-<h4 id="价格下限低于均衡价格"><a href="#价格下限低于均衡价格" class="headerlink" title="价格下限低于均衡价格"></a>价格下限低于均衡价格</h4><p>价格下限低于均衡价格,价格下限没有限制性</p>
-<h4 id="价格下限高于均衡价格"><a href="#价格下限高于均衡价格" class="headerlink" title="价格下限高于均衡价格"></a>价格下限高于均衡价格</h4><p>价格下限高于均衡价格,价格下限有限制性</p>
-<h5 id="直接结果-1"><a href="#直接结果-1" class="headerlink" title="直接结果"></a>直接结果</h5><p>价格的下限高于均衡价格,需求量减少,供给量增加,供给&gt;需求,<strong>会出现过剩</strong></p>
-<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><ul>
-<li>最低工资(针对于受教于低,技能差的人群影响较大)<ul>
-<li>若劳动市场的工资低于最低工资标准,需<strong>要增加各种措施来”降低”最低工资标准</strong></li>
-<li>当某个行业受到冲击,例如某段时间对外贸易量降低(供给降低),会导致一部分人失业;均衡工资降低,如果降到政府规定的最低工资以下,如果政府还坚持当前的最低工资标准,往往会导致更高的失业率</li>
-<li>即:政府的初衷是好的(最低工资不变解决失业问题),但是往往会有意想不到的后果:恰恰是经济发展不好的时候,政府的政策存在不利影响.</li>
-</ul>
-</li>
-<li>农产品保护价格(若农产品大丰收,供给量大大增加,其单位价格会降低)<ul>
-<li><strong>发达国家存在于农产品的补贴(最低价格),高补贴会保护国内的产业,但是发展中国家的农产品很难出口出去</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="价格控制例子"><a href="#价格控制例子" class="headerlink" title="价格控制例子"></a>价格控制例子</h2><ul>
-<li>房租控制</li>
-</ul>
-<p>房租控制的目的本身,在于让更多的人有住的地方;</p>
-<p>将房租的价格控制在均衡价格之下,导致供给减少,但是,可能会出现一些不正之风(比如和管理房子的走后门)</p>
-<p><strong>房租控制是摧毁一座城市最好的办法</strong> </p>
-<p><strong>分析</strong></p>
-<p>房租控制在短期的结果,由于供给需求缺乏弹性,不太可能出现短缺</p>
-<p>长期控制,供给和需求均变得有弹性,会出现短缺,如果政府控制价格不变,弹性会越来越大,短缺也会越来越恶化</p>
-<p>具体的某个场景,房子的装修会越来越差,租房子的人也只会以较低的价格去租房</p>
-]]></content>
-      <categories>
-        <category>经济学</category>
-      </categories>
-      <tags>
-        <tag>经济学原理</tag>
-        <tag>税收</tag>
-        <tag>市场和政府政策</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>进程_线程_js事件循环</title>
     <url>/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程（process）"><a href="#进程（process）" class="headerlink" title="进程（process）"></a>进程（process）</h2><p>计算机已经运行的程序，是操作系统管理程序的一种方式；我们可以认为：启动一个程序，就会启动一个或者多个进程。</p>
@@ -2181,6 +2125,80 @@
       </tags>
   </entry>
   <entry>
+    <title>经济学原理浅学（二）</title>
+    <url>/2022/06/08/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86%E6%B5%85%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<p>在自由的、无管制的市场的力量建立了均衡价格，决定了交换的数量</p>
+<p>经济学原理之一：市场在通常情况下是有效率的.</p>
+<p>虽然均衡的状态是有效率的，但是并非每个人都满意的</p>
+<h1 id="价格控制"><a href="#价格控制" class="headerlink" title="价格控制"></a>价格控制</h1><p>实行价格控制通常是政府相信市场价格对买方或者卖方不公平.</p>
+<p><strong>两种价格控制</strong>:价格上限和价格下限,常常引发事与愿违的结果.(效率和公平损失)</p>
+<h2 id="价格上限"><a href="#价格上限" class="headerlink" title="价格上限"></a>价格上限</h2><p>法定最高价格</p>
+<p>政府实行价格上限两种可能的结果:价格上限高于均衡价格,价格上限低于均衡价格</p>
+<h4 id="价格上限高于均衡价格"><a href="#价格上限高于均衡价格" class="headerlink" title="价格上限高于均衡价格"></a>价格上限高于均衡价格</h4><p>价格上限高于均衡价格,价格上限没有限制性</p>
+<p>即:政府虽然制定了价格上限这个约束,但是这个约束条件没有限制性</p>
+<p>此时,市场对于该商品的需求量供应量均<strong>不变</strong></p>
+<h4 id="价格上限低于均衡价格"><a href="#价格上限低于均衡价格" class="headerlink" title="价格上限低于均衡价格"></a>价格上限低于均衡价格</h4><p>价格上限低于均衡价格,价格上限有限制性;</p>
+<p>即:政府制定的价格上限这个约束条件有限制性</p>
+<p>此时,市场对于该商品的需求量会增加,对于该商品的供应量会减小,中间差称为<strong>短缺</strong>(经济学定义)</p>
+<p><strong>其他条件不变的情况下</strong>,短缺与生产力和生产效率无关</p>
+<p>因为不管是生产力低下还是高效,基于市场的供求模型,供给和需求总会达到一个平衡点</p>
+<p>在这种场景下,政府如果制定的价格上限如果低于这个均衡价格,才会出现短缺的情况</p>
+<p>如果政府制定的价格上限高于均衡价格,那么不会出现短缺</p>
+<p>如果出现了短缺,在需求不变的情况下,可以通过增加供给来解决短缺问题.</p>
+<h5 id="直接结果"><a href="#直接结果" class="headerlink" title="直接结果"></a>直接结果</h5><p>供给量&lt;需求量</p>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><ul>
+<li>70年代的食品(需要粮票去买);</li>
+<li>80年代的原材料(钢铁);</li>
+<li>90年代发售原始股</li>
+</ul>
+<h5 id="引出的问题"><a href="#引出的问题" class="headerlink" title="引出的问题"></a>引出的问题</h5><p>有限制作用的价格上限导致了<strong>配给</strong>,因为有短缺</p>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>排队,先来后到<ul>
+<li>造成资源的浪费(时间)</li>
+</ul>
+</li>
+<li>卖者对买着的歧视(例如粮票,种族等,性别,走后门等)<ul>
+<li>票虽然不会造成资源浪费,但是持有该票的人不一定最想得到该资源的人</li>
+</ul>
+</li>
+</ul>
+<h2 id="价格下限"><a href="#价格下限" class="headerlink" title="价格下限"></a>价格下限</h2><p>法定最低价格</p>
+<h4 id="价格下限低于均衡价格"><a href="#价格下限低于均衡价格" class="headerlink" title="价格下限低于均衡价格"></a>价格下限低于均衡价格</h4><p>价格下限低于均衡价格,价格下限没有限制性</p>
+<h4 id="价格下限高于均衡价格"><a href="#价格下限高于均衡价格" class="headerlink" title="价格下限高于均衡价格"></a>价格下限高于均衡价格</h4><p>价格下限高于均衡价格,价格下限有限制性</p>
+<h5 id="直接结果-1"><a href="#直接结果-1" class="headerlink" title="直接结果"></a>直接结果</h5><p>价格的下限高于均衡价格,需求量减少,供给量增加,供给&gt;需求,<strong>会出现过剩</strong></p>
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><ul>
+<li>最低工资(针对于受教于低,技能差的人群影响较大)<ul>
+<li>若劳动市场的工资低于最低工资标准,需<strong>要增加各种措施来”降低”最低工资标准</strong></li>
+<li>当某个行业受到冲击,例如某段时间对外贸易量降低(供给降低),会导致一部分人失业;均衡工资降低,如果降到政府规定的最低工资以下,如果政府还坚持当前的最低工资标准,往往会导致更高的失业率</li>
+<li>即:政府的初衷是好的(最低工资不变解决失业问题),但是往往会有意想不到的后果:恰恰是经济发展不好的时候,政府的政策存在不利影响.</li>
+</ul>
+</li>
+<li>农产品保护价格(若农产品大丰收,供给量大大增加,其单位价格会降低)<ul>
+<li><strong>发达国家存在于农产品的补贴(最低价格),高补贴会保护国内的产业,但是发展中国家的农产品很难出口出去</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="价格控制例子"><a href="#价格控制例子" class="headerlink" title="价格控制例子"></a>价格控制例子</h2><ul>
+<li>房租控制</li>
+</ul>
+<p>房租控制的目的本身,在于让更多的人有住的地方;</p>
+<p>将房租的价格控制在均衡价格之下,导致供给减少,但是,可能会出现一些不正之风(比如和管理房子的走后门)</p>
+<p><strong>房租控制是摧毁一座城市最好的办法</strong> </p>
+<p><strong>分析</strong></p>
+<p>房租控制在短期的结果,由于供给需求缺乏弹性,不太可能出现短缺</p>
+<p>长期控制,供给和需求均变得有弹性,会出现短缺,如果政府控制价格不变,弹性会越来越大,短缺也会越来越恶化</p>
+<p>具体的某个场景,房子的装修会越来越差,租房子的人也只会以较低的价格去租房</p>
+]]></content>
+      <categories>
+        <category>经济学</category>
+      </categories>
+      <tags>
+        <tag>经济学原理</tag>
+        <tag>税收</tag>
+        <tag>市场和政府政策</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>迭代器_可迭代对象</title>
     <url>/2022/04/16/%E8%BF%AD%E4%BB%A3%E5%99%A8-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1/</url>
     <content><![CDATA[<h1 id="迭代器-iterator"><a href="#迭代器-iterator" class="headerlink" title="迭代器(iterator)"></a>迭代器(iterator)</h1><h2 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h2><ol>
@@ -2266,10 +2284,10 @@
         <category>js实现原理</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>es6</tag>
         <tag>迭代器</tag>
         <tag>iterator</tag>
+        <tag>js</tag>
+        <tag>es6</tag>
         <tag>可迭代对象</tag>
         <tag>ts</tag>
         <tag>js实现原理</tag>

@@ -28,10 +28,10 @@
 <meta property="og:site_name" content="hrm的小站">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/1b4f48bc0d8fb9a08b45d1f0deac8a99.webp">
-<meta property="og:image" content="https://hourunmeng.github.io/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89.assets/image-20220723182348017.png">
+<meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220723182348017.png">
 <meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/b239d0804be630ce182e24ea9e4ab237.webp">
 <meta property="article:published_time" content="2022-07-23T06:03:13.000Z">
-<meta property="article:modified_time" content="2022-07-23T12:43:51.398Z">
+<meta property="article:modified_time" content="2022-07-23T13:25:32.418Z">
 <meta property="article:author" content="hrm">
 <meta property="article:tag" content="HTTP">
 <meta property="article:tag" content="计算机网络">
@@ -41,6 +41,8 @@
 <meta property="article:tag" content="跨站请求伪造">
 <meta property="article:tag" content="XSS">
 <meta property="article:tag" content="XSRF">
+<meta property="article:tag" content="强缓存">
+<meta property="article:tag" content="协商缓存">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/1b4f48bc0d8fb9a08b45d1f0deac8a99.webp">
 
@@ -98,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">70</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">72</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -173,12 +175,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -278,7 +280,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-07-23 14:03:13 / 修改时间：20:43:51" itemprop="dateCreated datePublished" datetime="2022-07-23T14:03:13+08:00">2022-07-23</time>
+      <time title="创建时间：2022-07-23 14:03:13 / 修改时间：21:25:32" itemprop="dateCreated datePublished" datetime="2022-07-23T14:03:13+08:00">2022-07-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,6 +293,10 @@
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/HTTP/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HTTP/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BC%93%E5%AD%98/" itemprop="url" rel="index"><span itemprop="name">缓存</span></a>
         </span>
     </span>
 
@@ -308,14 +314,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7k</span>
+      <span>7.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -385,23 +391,25 @@
 <ul>
 <li><p><strong>属性</strong>：</p>
 </li>
-<li><p><strong>public,previate</strong></p>
+<li><p><strong>public和prevate</strong></p>
 <p><code>public</code> 表示该资源可以被所有客户端和代理服务器缓存，</p>
 <p> <code>private</code> 表示该资源仅能客户端缓存。默认值是 <code>private</code>，当设置了 <code>s-maxage</code> 的时候表示允许代理服务器缓存，相当于 <code>public</code>。</p>
 </li>
-<li><p><code>Max-Age</code>和<code>S-Maxage</code>：表示资源的有效期，值为number，秒钟。</p>
+<li><p><strong>Max-Age和S-Maxage</strong>：表示资源的有效期，值为number，秒钟。</p>
 <ul>
 <li>时间的计算起点是响应报文的创建时刻（即 Date 字段，也就是离开服务器的时刻），而不是客户端收到报文的时刻，也就是说包含了在链路传输过程中所有节点所停留的时间。</li>
 <li>服务器设定“max-age&#x3D;5”，但因为网络质量很糟糕，等浏览器收到响应报文已经过去了 4 秒，那么这个资源在客户端就最多能够再存 1 秒钟，之后就会失效。</li>
-<li>两者是 <code>cache-control</code> 的主要字段，它们是一个数字，表示资源过了多少秒之后变为无效。在浏览器中，<code>max-age</code> 和 <code>s-maxage</code> 都起作用，而且 <code>s-maxage</code> 的优先级高于 <code>max-age</code>。在代理服务器中，只有 <code>s-maxage</code> 起作用。 可以通过设置 <code>max-age</code> 为 0 表示立马过期来向服务器请求资源。</li>
+<li>两者是 <code>cache-control</code> 的主要字段，它们是一个数字，表示资源过了多少秒之后变为无效。在浏览器中，<code>max-age</code> 和 <code>s-maxage</code> 都起作用，而且 <code>s-maxage</code> 的优先级高于 <code>max-age</code>。<strong>在代理服务器中，只有 <code>s-maxage</code> 起作用</strong>。 可以通过设置 <code>max-age</code> 为 0 表示立马过期来向服务器请求资源。</li>
 </ul>
 </li>
 <li><p><strong>no-store</strong>：不允许缓存，用于某些变化非常频繁的数据，例如秒杀页面；</p>
 </li>
-<li><p><strong>no-cache</strong>：它的字面含义容易与 no-store 搞混，实际的意思并不是不允许缓存，而是<strong>可以缓存</strong>，但在使用之前必须要去服务器验证是否过期，是否有最新的版本，如果有就使用最新的数据.</p>
+<li><p><strong>no-cache</strong>：并不是不允许缓存，而是<strong>可以缓存</strong>，但在使用之前必须要去服务器验证是否过期，是否有最新的版本，如果有就使用最新的数据<strong>（协商缓存）</strong>。</p>
 <ul>
 <li>即：no-cache总是使用服务端的最新数据，如果没有最新的数据在使用本地缓存.</li>
 <li>但是,在使用no-cache属性时,也向服务端发送了一次请求,同样有效率损耗,但是这个报文很小,不像是最新的资源,会传输最完整的报文,导致成本高.</li>
+<li>由于<strong>no-cache和no-store</strong>都不考虑缓存情况而是直接与服务器交互，所以当 <code>no-cache</code> 和 <code>no-store</code> 存在时会直接忽略 <code>max-age</code> 等。</li>
+<li>如果<strong>Cache-Control</strong>没有设置<strong>no-cache</strong>和<strong>no-store</strong>属性，则默认进行强缓存（本都磁盘读取）。</li>
 </ul>
 </li>
 <li><p><strong>must-revalidate</strong>：如果缓存不过期就可以继续使用，但过期了如果还想用就必须去服务器验证。</p>
@@ -419,12 +427,15 @@
 <p>当浏览器多次刷新，会发现每次得到的随机数还是会变化</p>
 <p>原因是：</p>
 <ul>
-<li>浏览器会在请求头里加一个“<strong>Cache-Control: max-age&#x3D;0</strong>”。因为 max-age 是“生存时间”，max-age&#x3D;0 表示需要最新的数据，而本地缓存里的数据至少保存了几秒钟，所以浏览器就不会使用缓存，而是向服务器发请求。</li>
+<li>浏览器会在请求头里加一个“<strong>Cache-Control: max-age&#x3D;0</strong>”。因为 max-age 是“生存时间”，max-age&#x3D;0 表示需要最新的数据，而本地缓存里的数据至少保存了几秒钟，所以浏览器就不会使用缓存，而是向服务器发请求。<ul>
+<li>即：按F5刷新页面，浏览器直接让缓存过期，与服务端进行<strong>协商缓存</strong>。</li>
+</ul>
+</li>
 <li>服务器看到 max-age&#x3D;0，也就会用一个最新生成的报文回应浏览器。</li>
-<li>Ctrl+F5 的“强制刷新”又是什么样的呢？它其实是发了一个“<strong>Cache-Control: no-cache</strong>”，<strong>含义和“max-age&#x3D;0”基本一样</strong>，就看后台的服务器怎么理解，通常两者的效果是相同的。</li>
+<li>Ctrl+F5 的“强制刷新”又是什么样的呢？它其实是发了一个“<strong>Cache-Control: no-cache</strong>”（浏览器强制设置），<strong>含义和“max-age&#x3D;0”基本一样</strong>，强制获取最新的资源，就连 <code>if-modified-since</code> 等其他缓存协议字段都会被吃掉。</li>
 </ul>
 <p>点击浏览器的“前进”“后退”按钮，再看开发者工具，发现“from disk cache”的字样，意思是没有发送网络请求，而是读取的磁盘上的缓存。</p>
-<p><img src="/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89.assets/image-20220723182348017.png" alt="image-20220723182348017"></p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220723182348017.png" alt="图示"></p>
 <p>可以理解为：在<strong>“前进”“后退”“跳转”这些重定向动作中浏览器不会“夹带私货”</strong>，只用最基本的请求头，没有“Cache-Control”，所以就会检查缓存，直接利用之前的资源，不再进行网络通信。</p>
 <h2 id="条件请求"><a href="#条件请求" class="headerlink" title="条件请求"></a>条件请求</h2><p><strong>条件请求产生的原因：浏览器用“Cache-Control”做缓存控制只能是刷新数据，不能很好地利用缓存数据，又因为缓存会失效，使用前还必须要去服务器验证是否是最新版。</strong></p>
 <p>浏览器可以用两个连续的请求组成“验证动作”：先是一个 HEAD，获取资源的修改时间等元信息，然后与缓存数据比较，如果没有改动就使用缓存，节省网络流量，否则就再发一个 GET 请求，获取最新的版本。</p>
@@ -435,22 +446,27 @@
 <p>和<strong>If-None-Match</strong>配合的<strong>响应字段是Etags</strong></p>
 <p>第一种：</p>
 <ul>
-<li><p><strong>Last-modified</strong>：（响应头字段）表示文件的最后修改时间。在浏览器<strong>第一次</strong>请求某一个URL时，服务器端的返回状态会是200，内容是客户端请求的资源，同时有一个<strong>Last-Modified</strong>的属性标记此文件在服务期端最后被修改的时间。</p>
-</li>
-<li><p><strong>if-Modified-Since</strong>：（请求头字段）客户端<strong>第二次</strong>请求此URL时，根据 HTTP 协议的规定，浏览器会向服务器传送If-Modified-Since 报头（在第一次访问时的时间被存储的值），询问该时间之后文件是否有被修改过，具体的时间表示<strong>本地浏览器存储的文件修改时间</strong>。</p>
-<ul>
+<li><strong>Last-modified</strong>：（响应头字段）表示文件的最后修改时间。在浏览器<strong>第一次</strong>请求某一个URL时，服务器端的返回状态会是200，内容是客户端请求的资源，同时有一个<strong>Last-Modified</strong>的属性标记此文件在服务期端最后被修改的时间。</li>
+<li>在客户端后来的请求中（非第一次），服务端会对比该字段和资源的最后修改时间（客户端携带的If-Modify-Since字段），若一致则证明没有被修改，告知浏览器可直接使用缓存并返回 304；若不一致则直接返回修改后的资源，并修改 <code>last-modified</code> 为新的值。</li>
+<li><strong>if-Modified-Since</strong>：（请求头字段）客户端<strong>第二次以及之后请求</strong>请求此URL时，根据 HTTP 协议的规定，浏览器会向服务器传送If-Modified-Since 报头（在第一次访问时的时间被存储的值），询问该时间之后文件是否有被修改过，具体的时间表示<strong>本地浏览器存储的文件修改时间</strong>。<ul>
 <li>如果服务器端的资源没有变化，则时间一致，自动返回HTTP状态码304（Not Changed.）状态码，内容为空，客户端接到之后，就直接把本地缓存文件显示到浏览器中，这样就节省了传输数据量。</li>
 <li>如果服务器端资源发生改变或者重启服务器时，时间不一致，就返回HTTP状态码200和新的文件内容，客户端接到之后，会丢弃旧文件，把新文件缓存起来，并显示到浏览器中。</li>
 </ul>
 </li>
 </ul>
+<p>缺点：</p>
+<ol>
+<li>只要编辑了（例如增加无用的空格），不管内容是否真的有改变，都会以这最后修改的时间作为判断依据，当成新资源返回，从而导致了没必要的请求响应，而这正是缓存本来的作用，即避免没必要的请求。</li>
+<li>时间的精确度只能到秒，如果在一秒内的修改是检测不到更新的，仍会告知浏览器使用旧的缓存。</li>
+</ol>
 <p>第二种：</p>
+<p>第二种方式的出现解决了第一种方式的缺点。</p>
 <ul>
 <li><strong>If-None-Match</strong>：（请求头字段）：服务端传过来的<strong>Etag的值</strong></li>
 <li><strong>ETag</strong>：（通用字段）“Entity Tag”，实体标签，<strong>资源的唯一标识</strong>，主要是用来解决修改时间无法准确区分文件变化的问题。<ul>
 <li>比如，一个文件在一秒内修改了多次，但因为修改时间是秒级，所以这一秒内的新版本无法区分。</li>
-<li>再比如，一个文件定期更新，但有时会是同样的内容，实际上没有变化，用修改时间就会误以为发生了变化，传送给浏览器就会浪费带宽。</li>
-<li>使用 ETag 就可以精确地识别资源的变动情况，让浏览器能够更有效地利用缓存。</li>
+<li>比如，一个文件定期更新，但有时会是同样的内容，实际上没有变化，用修改时间就会误以为发生了变化，传送给浏览器就会浪费带宽。</li>
+<li>使用 ETag 就可以精确地识别资源的变动情况，只要文件有改动，就生成最新的<strong>Etag</strong>的值（解决上述缺点2），让浏览器能够更有效地利用缓存。</li>
 <li>ETag的强弱之分：<ul>
 <li>强 ETag 要求资源在字节级别必须完全相符，</li>
 <li>弱 ETag 在值前有个“W&#x2F;”标记，只要求资源在语义上没有变化，但内部可能会有部分发生了改变（例如 HTML 里的标签顺序调整，或者多了几个空格）。</li>
@@ -473,7 +489,12 @@
 <p>如果资源没有变，服务器就回应一个“304 Not Modified”，表示缓存依然有效，浏览器就可以更新一下有效期，然后放心大胆地使用缓存了。</p>
 <p>条件请求里其他的三个头字段是“<strong>If-Unmodified-Since”“If-Match”和“If-Range”</strong>，掌握了“if-Modified-Since”和“If-None-Match”，可以轻易地“举一反三”。</p>
 <ul>
-<li>注意:<strong>服务器又设置了Cache-Control:max-age和Expires时,会同时使用,也就是说在完全匹配If-Modified-Since和If-None-Match,即检查完修改时间和Etag之后,服务器才能返回304.</strong></li>
+<li>注意:<ul>
+<li><strong>服务器又设置了Cache-Control:max-age和Expires时,会同时使用,也就是说在完全匹配If-Modified-Since和If-None-Match,即检查完修改时间和Etag之后,服务器才能返回304.</strong></li>
+<li>Expires属于HTTP1.0规定的缓存字段，若两者在响应头中均出现，<strong>Cache-Control的优先级更高</strong></li>
+<li>Etag比last-modify优先级高。</li>
+</ul>
+</li>
 </ul>
 <p>这两种方式，</p>
 <p>知识补充：</p>
@@ -497,8 +518,8 @@
 </li>
 <li>cache-control中的private识别:缓存策略取决于服务器，它认为这个缓存只能存放在客户端，不能存放在代理上，就设置private。</li>
 <li>强缓存和协商缓存<ul>
-<li>强缓存:浏览器直接从本地缓存中获取数据，不与服务器进行交互</li>
-<li>协商缓存:浏览器发送请求到服务器，服务器判断是否可使用本地缓存<ul>
+<li>强缓存:浏览器直接从本地缓存中获取数据，不与服务器进行交互,返回的状态码是 <strong>200</strong></li>
+<li>协商缓存:浏览器发送请求到服务器，服务器判断是否可使用本地缓存.<strong>会去服务器比对</strong>，若没改变才直接读取本地缓存，返回的状态码是 <strong>304</strong>。<ul>
 <li>Last-Modify和If-Modify-Since搭配</li>
 <li>Etag和If-None-Match搭配</li>
 </ul>
@@ -546,6 +567,8 @@
               <a href="/tags/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/" rel="tag"><i class="fa fa-tag"></i> 跨站请求伪造</a>
               <a href="/tags/XSS/" rel="tag"><i class="fa fa-tag"></i> XSS</a>
               <a href="/tags/XSRF/" rel="tag"><i class="fa fa-tag"></i> XSRF</a>
+              <a href="/tags/%E5%BC%BA%E7%BC%93%E5%AD%98/" rel="tag"><i class="fa fa-tag"></i> 强缓存</a>
+              <a href="/tags/%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/" rel="tag"><i class="fa fa-tag"></i> 协商缓存</a>
           </div>
 
         
@@ -590,14 +613,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">98k</span>
+    <span title="站点总字数">99k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:29</span>
+    <span title="站点阅读时长">1:30</span>
   </span>
 </div>
 <div class="busuanzi-count">
