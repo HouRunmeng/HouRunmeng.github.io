@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flash.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"hourunmeng.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="进程_线程_js事件循环">
+<meta property="og:url" content="https://hourunmeng.github.io/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/index.html">
+<meta property="og:site_name" content="hrm的小站">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220720223022458.png">
+<meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png">
+<meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721122601235.png">
+<meta property="og:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721152327981.png">
+<meta property="article:published_time" content="2022-07-20T03:06:21.000Z">
+<meta property="article:modified_time" content="2022-07-23T04:17:32.870Z">
+<meta property="article:author" content="hrm">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="进程">
+<meta property="article:tag" content="线程">
+<meta property="article:tag" content="事件循环">
+<meta property="article:tag" content="eventLoop">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220720223022458.png">
+
+
+<link rel="canonical" href="https://hourunmeng.github.io/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://hourunmeng.github.io/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/","path":"2022/07/20/进程-线程-js事件循环/","title":"进程_线程_js事件循环"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>进程_线程_js事件循环 | hrm的小站</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">hrm的小站</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">高屋建瓴不流俗！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">70</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+      <div
+        class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%EF%BC%88process%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">进程（process）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%EF%BC%88thread%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">线程（thread）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">js线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">事件循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1-amp-amp-%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.1.</span> <span class="nav-text">宏任务&amp;&amp;微任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%EF%BC%88macrotask%EF%BC%89"><span class="nav-number">3.1.1.</span> <span class="nav-text">宏任务（macrotask）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E4%BB%BB%E5%8A%A1%EF%BC%88microtask%EF%BC%89"><span class="nav-number">3.1.2.</span> <span class="nav-text">微任务（microtask）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="nav-number">3.1.3.</span> <span class="nav-text">总的执行过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">3.2.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">3.3.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">3.4.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="hrm"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">hrm</p>
+  <div class="site-description" itemprop="description">锦朝万里！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HouRunmeng" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HouRunmeng" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1102692752@qq.com" title="E-Mail → mailto:1102692752@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.yesmylord.cn/" title="https:&#x2F;&#x2F;www.yesmylord.cn" rel="noopener" target="_blank">Hynis</a>
+        </li>
+    </ul>
+  </div>
+
+          
+        </div>
+      </div>
+      <iframe
+        frameborder="no"
+        border="0"
+        marginwidth="0"
+        marginheight="0"
+        width="298"
+        height="52"
+        src="//music.163.com/outchain/player?type=2&id=1902224134&auto=1&height=32"></iframe>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/HouRunmeng" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hourunmeng.github.io/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="hrm">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hrm的小站">
+      <meta itemprop="description" content="锦朝万里！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="进程_线程_js事件循环 | hrm的小站">
+      <meta itemprop="description" content="进程_线程_js事件循环学习总结">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进程_线程_js事件循环
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-20 11:06:21" itemprop="dateCreated datePublished" datetime="2022-07-20T11:06:21+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-23 12:17:32" itemprop="dateModified" datetime="2022-07-23T12:17:32+08:00">2022-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/js/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="index"><span itemprop="name">事件循环</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">进程与线程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/js/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">进程与线程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">进程_线程_js事件循环学习总结</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程（process）"><a href="#进程（process）" class="headerlink" title="进程（process）"></a>进程（process）</h2><p>计算机已经运行的程序，是操作系统管理程序的一种方式；我们可以认为：启动一个程序，就会启动一个或者多个进程。</p>
+<h2 id="线程（thread）"><a href="#线程（thread）" class="headerlink" title="线程（thread）"></a>线程（thread）</h2><p>操作系统能够运行运算调度的最小单位，通常情况下它被包含在进程中（进程是线程的容器）；同样，我们可以认为：每一个进程，都会至少启动一个线程来执行程序中的代码，这个线程被称为主线程。</p>
+<p>当进程中的线程获取到<strong>时间片</strong>时，就可以快速执行我们编写的代码。</p>
+<h1 id="js线程"><a href="#js线程" class="headerlink" title="js线程"></a>js线程</h1><p>JavaScript是<strong>单线程</strong>的，但是JavaScript的线程应该有自己的容器进程︰浏览器或者Node。</p>
+<ul>
+<li>目前多数的浏览器其实都是多进程的，<strong>当我们打开一个tab页面时就会开启一个新的进程</strong>，<ul>
+<li>如果浏览器为单进程，一个页面卡死而造成所有页面无法响应，整个浏览器需要强制退出;</li>
+</ul>
+</li>
+<li>每个进程中又有很多的线程，其中包括执行JavaScript代码的线程;<ul>
+<li>如果当前js线程时耗时操作，就会造成代码阻塞。</li>
+<li>解决方法：<ul>
+<li>浏览器的每个进程是多线程的，那么其他线程可以来完成这个耗时的操作;比如<strong>网络请求、定时器</strong>，我们只需要在特性的时候执行应该有的回调即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p><strong>在浏览器环境下，js单线程属于浏览器进程；在Node环境下，js单线程属于Node进程。</strong></p>
+<p>js本身是单线程的，意味着js不适合做耗时操作，否则会导致程序阻塞；</p>
+<p>那么，耗时操作就交给浏览器或者Node创建的其他线程来完成，并将处理结果以回调函数的形式，放入浏览器或者Node维护的事件队列中，js在合适的时机来执行这些回调函数；</p>
+<p>js在执行回调函数时，也有可能会遇见耗时操作，同理，这些耗时操作一就会被加入到事件队列中已在合适的时机被js执行。</p>
+<h2 id="宏任务-amp-amp-微任务"><a href="#宏任务-amp-amp-微任务" class="headerlink" title="宏任务&amp;&amp;微任务"></a>宏任务&amp;&amp;微任务</h2><h3 id="宏任务（macrotask）"><a href="#宏任务（macrotask）" class="headerlink" title="宏任务（macrotask）"></a>宏任务（macrotask）</h3><p>浏览器的宏任务：ajax回调、定时器、DOM事件回调、UI Rendering（UI渲染完之后的回调）；</p>
+<p>Node的宏任务：setTimeout、setInterval、IO事件、setImmediate、close事件。</p>
+<h3 id="微任务（microtask）"><a href="#微任务（microtask）" class="headerlink" title="微任务（microtask）"></a>微任务（microtask）</h3><p>浏览器的微任务：queueMicrotask的回调、promise.then的回调、MutationObserver的API；</p>
+<p>Node的微任务：Promise的then回调、process.nextTick的回调、queueMicrotask 的回调。</p>
+<p>但是，Node中不简单是一个宏任务和微任务队列，</p>
+<p>微任务队列：</p>
+<ul>
+<li>nextTick queue：process.nextTick	</li>
+<li>other queue：Promise的then回调，queueMicrotask</li>
+</ul>
+<p>宏任务队列：</p>
+<ul>
+<li>timer queue : setTimeout、setInterval ;</li>
+<li>poll queue : IO事件;</li>
+<li>check queue : setImmediate ;</li>
+<li>close queue : close事件;</li>
+</ul>
+<p>Node的宏任务和微任务的执行顺序：nextTick queue、other queue、timer queue、poll queue、check queue、close queue  </p>
+<h3 id="总的执行过程"><a href="#总的执行过程" class="headerlink" title="总的执行过程"></a>总的执行过程</h3><p>注意：在执行宏任务之前，需要确保问任务队列被清空；new Promise是同步代码。</p>
+<ol>
+<li>首先执行js顶层代码（同步代码）；</li>
+<li>执行的过程中，遇见宏任务，将该宏任务加入到宏任务队列；</li>
+<li>遇见微任务，将该微任务加入到微任务队列；</li>
+<li>顶层代码执行完毕，依次执行微任务队列中的任务，清空微任务队列；</li>
+<li>执行宏任务队列最先加入的宏任务，同时执行步骤2、3；</li>
+<li>执行微任务队列中的任务，清空微任务队列，执行步骤5；</li>
+</ol>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>浏览器维护着两个队列：宏任务队列和微任务队列。</p>
+<p>浏览器的事件循环（简）：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220720223022458.png" alt="浏览器事件循环"></p>
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>浏览器中的EventLoop是根据HTML5定义的规范来实现的，不同的浏览器可能会有不同的实现，而Node中是由<strong>libuv</strong>实现的。</p>
+<p>Node架构图：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构图"></p>
+<ul>
+<li>libuv中主要维护了一个EventLoop和worker threads(线程池），其主要是为Node开发的，现在也被使用到Luvit、Julia、pyuv等其他地方;</li>
+<li>EventLoop负责调用系统的一些其他操作∶文件的IO、Network、child-processes等</li>
+</ul>
+<p>服务器相对于浏览器最大的区别：I&#x2F;O操作。</p>
+<p>js本身并不会进行发起网络请求，连接数据库写入数据库，读取文件等操作，这就交给libuv来执行，相当于libuv给js提供了一些接口供其来调用，其本质是libuv执行了系统调用，并将执行结果以回调函数的形式返回，js在合适时机从事件队列拿取这些回调函数去处理结果。</p>
+<p>Node中的事件循环被划分为很多阶段：</p>
+<ul>
+<li>定时器（Timers)：本阶段执行已经被setTimeout()和setInterval()的调度回调函数。</li>
+<li>待定回调(Pending Calback)：对某些系统操作（如TCP错误类型）执行回调，比如TCP连接时接收到ECONNREFUSED。</li>
+<li>idle， prepare：仅系统内部使用。</li>
+<li>轮询（Poll )∶检索新的IO事件;执行与I&#x2F;O相关的回调;</li>
+<li>检测( check ) ： setImmediate()回调函数在这里执行。</li>
+<li>关闭的回调函数：一些关闭的回调函数，如:socket.on(‘close’,…)。</li>
+</ul>
+<p>其中，Node程序经常停留在I&#x2F;O阶段</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721122601235.png" alt="Node微任务队列"></p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 0 1 4 2 3 5 6</span></span><br><span class="line"><span class="comment">// 以上代码不做分析</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>稍稍修改：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">then</span>(<span class="params">resolve</span>) &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 4 3 5 6</span></span><br></pre></td></tr></table></figure>
+
+<p>与第一次的不同之处在于，console.log(0)之后返回了一个thenable对象(实现了then方法的对象)<br> <strong>在原生的Promise的实现中，返回的thenable对象如果resolve了，这个resolve会被往后推一次，推到下一次的微任务里面</strong></p>
+<p>图示：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721152327981.png" alt="以上代码图示"></p>
+<p>参看：</p>
+<p><a target="_blank" rel="noopener" href="https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485">https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485</a></p>
+<p>时间：1:10</p>
+<p><strong>再稍稍修改一下代码：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="property">log2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 3 4 5 6</span></span><br></pre></td></tr></table></figure>
+
+<p>分析：返回了一个thenable对象会被退后一次，即：不是普通的值会被推后一次</p>
+<p><strong>如果返回了return Promise.resolve(4)</strong></p>
+<p><strong>则会推后两次。</strong> </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>坚持技术分享,您的支持将鼓励我继续创作!</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="hrm 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="hrm 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/node/" rel="tag"><i class="fa fa-tag"></i> node</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+              <a href="/tags/%E8%BF%9B%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 进程</a>
+              <a href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 线程</a>
+              <a href="/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" rel="tag"><i class="fa fa-tag"></i> 事件循环</a>
+              <a href="/tags/eventLoop/" rel="tag"><i class="fa fa-tag"></i> eventLoop</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/13/node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="prev" title="node学习笔记（二）">
+                  <i class="fa fa-chevron-left"></i> node学习笔记（二）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/20/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="HTTP学习笔记（一）">
+                  HTTP学习笔记（一） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NjEwMS8zMjU2NA=="></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hrm</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">98k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:29</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/lib/darkmode/index.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+</body>
+</html>
