@@ -399,7 +399,7 @@
 <p>说明：</p>
 <ul>
 <li>项目的node_modules文件夹下，仅有axios依赖（本项目仅仅依赖axios库，就避免了使用commonjs或者esmodule引入依赖时，不可以访问本不属于当前项目所设定的依赖包）；</li>
-<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#97;&#120;&#105;&#111;&#x73;&#64;&#x30;&#46;&#x32;&#x37;&#x2e;&#x32;">&#97;&#120;&#105;&#111;&#x73;&#64;&#x30;&#46;&#x32;&#x37;&#x2e;&#x32;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
+<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#97;&#x78;&#105;&#x6f;&#x73;&#64;&#x30;&#x2e;&#50;&#x37;&#x2e;&#x32;">&#97;&#x78;&#105;&#x6f;&#x73;&#64;&#x30;&#x2e;&#50;&#x37;&#x2e;&#x32;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
 <li>在<code>axios@0.27.2/node_modules</code>目录之下，有<code>axios</code>的其他依赖软链接，其中，<code>form-data</code>的目录结构和<code>axios@0.27.2/node_modules</code>类似</li>
 </ul>
 <h2 id="pnpm的存储store"><a href="#pnpm的存储store" class="headerlink" title="pnpm的存储store"></a>pnpm的存储store</h2><ul>
