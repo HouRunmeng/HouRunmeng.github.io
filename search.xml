@@ -162,6 +162,69 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS学习笔记（二）</title>
+    <url>/2022/05/29/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="单行文字省略号显示"><a href="#单行文字省略号显示" class="headerlink" title="单行文字省略号显示"></a>单行文字省略号显示</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 主要代码 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">white-space</span>: nowrap;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="comment">/*  或者（根据多行行文字省略号显示修改） */</span></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* overflow: hidden;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    text-overflow: ellipsis;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    display: -webkit-box;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-line-clamp: 1;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-box-orient: vertical; */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="多行行文字省略号显示"><a href="#多行行文字省略号显示" class="headerlink" title="多行行文字省略号显示"></a>多行行文字省略号显示</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 主要代码 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: -webkit-box;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 设置第几行的文字显示省略号 */</span></span></span><br><span class="line"><span class="language-css">    -webkit-line-clamp: <span class="number">4</span>;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 设置方向 */</span></span></span><br><span class="line"><span class="language-css">    -webkit-box-orient: vertical;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="行内非替换元素的特殊性"><a href="#行内非替换元素的特殊性" class="headerlink" title="行内非替换元素的特殊性"></a>行内非替换元素的特殊性</h1><p>行内非替换元素：span、a、string、i等 </p>
+<h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>给span标签设置padding，在浏览器打开，看上去span盒子<strong>被撑开</strong>了，实则padding-top&#x2F;padding-bottom仅仅是呈现出来，并未生效。</p>
+<p>即：<strong>行内非替换元素的padding-top和padding-bottom不占据空间，左右padding会占据空间</strong></p>
+<h2 id="border"><a href="#border" class="headerlink" title="border"></a>border</h2><p>上下会被撑起来，但是不占据空间</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">30px</span> solid <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>margin上下不生效，左右生效</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h1><h2 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child()"></a>:nth-child()</h2><p>:nth-child(关于n的表达式)</p>
+<p><strong>n是自然数，从0开始</strong>，n是固定的，不能写为其他字母；表达式也可以是一个常数；<strong>元素的索引从1开始</strong></p>
+<p>例如：1表示第一个元素，2n（even）表示第偶数个元素，2n+1（odd）表示第奇数个元素，-n + 5 表示前五个元素</p>
+<p>示例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>n) &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：ul li:nth-child(2n)的选择方式：先将ul中的所有偶数个子元素选择，再依次判断被选中的子元素是否为li标签</p>
+<h2 id="nth-last-child"><a href="#nth-last-child" class="headerlink" title=":nth-last-child()"></a>:nth-last-child()</h2><p>对比于:nth-child，**:nth-child()是从前往后数；:nth-last-child是从后往前数**</p>
+<p>:nth–last-child(关于n的表达式)</p>
+<p><strong>n是自然数，从0开始</strong>，n是固定的，不能写为其他字母；表达式也可以是一个常数；</p>
+<p>例如：1表示最后一个元素，2n（even）表示倒数偶数个元素，2n+1（odd）表示倒数奇数个元素，-n + 5 表示后五个元素</p>
+<h2 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type()"></a>:nth-of-type()</h2><p>与:nth-child()，不同点是该结构伪类选择器只计算同种类型的元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.ul</span>&gt;<span class="selector-tag">li</span><span class="selector-pseudo">:nth-of-type</span>(<span class="number">2</span>) &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;ul&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    内容3</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在上述代码中，“内容3”将被渲染为红色</p>
+<h2 id="其他结构伪类"><a href="#其他结构伪类" class="headerlink" title="其他结构伪类"></a>其他结构伪类</h2><h3 id="first-child"><a href="#first-child" class="headerlink" title=":first-child"></a>:first-child</h3><p>等同于:nth-child(1)</p>
+<h3 id="last-child"><a href="#last-child" class="headerlink" title=":last-child"></a>:last-child</h3><p>等同于:nth-last-child(1)</p>
+<h3 id="first-of-type"><a href="#first-of-type" class="headerlink" title=":first-of-type"></a>:first-of-type</h3><p>等同于:nth-of-type(1)</p>
+<h3 id="last-of-type"><a href="#last-of-type" class="headerlink" title=":last-of-type"></a>:last-of-type</h3><p>等同于:nth-last-of-type(1)</p>
+<h3 id="only-child"><a href="#only-child" class="headerlink" title=":only-child"></a>:only-child</h3><p>父元素中唯一的子元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:only-child</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>“内容1”将被渲染为红色</strong></p>
+<p>:only-of-type，是父元素中唯一的这种类型的子元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span> <span class="selector-pseudo">:only-of-type</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>	</span><br></pre></td></tr></table></figure>
+
+<p><strong>“内容1”“内容2”“内容5”将被渲染为红色</strong></p>
+<h3 id="root"><a href="#root" class="headerlink" title=":root"></a>:root</h3><p>根元素，就是html元素</p>
+<h3 id="empty"><a href="#empty" class="headerlink" title=":empty"></a>:empty</h3><p>代表里面完全空白的元素</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .box:empty &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    p标签的内容</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码，第一个.box的样式会被应用</p>
+<h3 id="not"><a href="#not" class="headerlink" title=":not()"></a>:not()</h3><p>否定伪类</p>
+<p>:not(x)</p>
+<p>x是一个简单选择器<br>元素选择器、通用选择器、属性选择器、类选择器、id选择器、伪类（除否定伪类)</p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>行内块（或非替换）元素的特殊性</tag>
+        <tag>结构伪类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS学习笔记（五）</title>
     <url>/2022/06/05/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<h1 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h1><ul>
@@ -245,69 +308,6 @@
         <tag>CSS浮动</tag>
         <tag>行内级元素默认间隙清除</tag>
         <tag>清除浮动</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS学习笔记（二）</title>
-    <url>/2022/05/29/CSS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="单行文字省略号显示"><a href="#单行文字省略号显示" class="headerlink" title="单行文字省略号显示"></a>单行文字省略号显示</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 主要代码 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">white-space</span>: nowrap;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="comment">/*  或者（根据多行行文字省略号显示修改） */</span></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* overflow: hidden;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    text-overflow: ellipsis;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    display: -webkit-box;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-line-clamp: 1;</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    -webkit-box-orient: vertical; */</span></span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="多行行文字省略号显示"><a href="#多行行文字省略号显示" class="headerlink" title="多行行文字省略号显示"></a>多行行文字省略号显示</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 主要代码 */</span></span></span><br><span class="line"><span class="language-css">    <span class="attribute">overflow</span>: hidden;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">text-overflow</span>: ellipsis;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">display</span>: -webkit-box;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 设置第几行的文字显示省略号 */</span></span></span><br><span class="line"><span class="language-css">    -webkit-line-clamp: <span class="number">4</span>;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 设置方向 */</span></span></span><br><span class="line"><span class="language-css">    -webkit-box-orient: vertical;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="行内非替换元素的特殊性"><a href="#行内非替换元素的特殊性" class="headerlink" title="行内非替换元素的特殊性"></a>行内非替换元素的特殊性</h1><p>行内非替换元素：span、a、string、i等 </p>
-<h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">padding</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>给span标签设置padding，在浏览器打开，看上去span盒子<strong>被撑开</strong>了，实则padding-top&#x2F;padding-bottom仅仅是呈现出来，并未生效。</p>
-<p>即：<strong>行内非替换元素的padding-top和padding-bottom不占据空间，左右padding会占据空间</strong></p>
-<h2 id="border"><a href="#border" class="headerlink" title="border"></a>border</h2><p>上下会被撑起来，但是不占据空间</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">border</span>: <span class="number">30px</span> solid <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">5</span>);</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>margin上下不生效，左右生效</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.content</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">margin</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">background-color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>测试内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">测试内容之后</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  div的内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h1><h2 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child()"></a>:nth-child()</h2><p>:nth-child(关于n的表达式)</p>
-<p><strong>n是自然数，从0开始</strong>，n是固定的，不能写为其他字母；表达式也可以是一个常数；<strong>元素的索引从1开始</strong></p>
-<p>例如：1表示第一个元素，2n（even）表示第偶数个元素，2n+1（odd）表示第奇数个元素，-n + 5 表示前五个元素</p>
-<p>示例</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>n) &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>说明：ul li:nth-child(2n)的选择方式：先将ul中的所有偶数个子元素选择，再依次判断被选中的子元素是否为li标签</p>
-<h2 id="nth-last-child"><a href="#nth-last-child" class="headerlink" title=":nth-last-child()"></a>:nth-last-child()</h2><p>对比于:nth-child，**:nth-child()是从前往后数；:nth-last-child是从后往前数**</p>
-<p>:nth–last-child(关于n的表达式)</p>
-<p><strong>n是自然数，从0开始</strong>，n是固定的，不能写为其他字母；表达式也可以是一个常数；</p>
-<p>例如：1表示最后一个元素，2n（even）表示倒数偶数个元素，2n+1（odd）表示倒数奇数个元素，-n + 5 表示后五个元素</p>
-<h2 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type()"></a>:nth-of-type()</h2><p>与:nth-child()，不同点是该结构伪类选择器只计算同种类型的元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.ul</span>&gt;<span class="selector-tag">li</span><span class="selector-pseudo">:nth-of-type</span>(<span class="number">2</span>) &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;ul&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    内容3</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>内容6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在上述代码中，“内容3”将被渲染为红色</p>
-<h2 id="其他结构伪类"><a href="#其他结构伪类" class="headerlink" title="其他结构伪类"></a>其他结构伪类</h2><h3 id="first-child"><a href="#first-child" class="headerlink" title=":first-child"></a>:first-child</h3><p>等同于:nth-child(1)</p>
-<h3 id="last-child"><a href="#last-child" class="headerlink" title=":last-child"></a>:last-child</h3><p>等同于:nth-last-child(1)</p>
-<h3 id="first-of-type"><a href="#first-of-type" class="headerlink" title=":first-of-type"></a>:first-of-type</h3><p>等同于:nth-of-type(1)</p>
-<h3 id="last-of-type"><a href="#last-of-type" class="headerlink" title=":last-of-type"></a>:last-of-type</h3><p>等同于:nth-last-of-type(1)</p>
-<h3 id="only-child"><a href="#only-child" class="headerlink" title=":only-child"></a>:only-child</h3><p>父元素中唯一的子元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span> <span class="selector-tag">div</span><span class="selector-pseudo">:only-child</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>“内容1”将被渲染为红色</strong></p>
-<p>:only-of-type，是父元素中唯一的这种类型的子元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">  <span class="selector-class">.box</span> <span class="selector-pseudo">:only-of-type</span> &#123;</span></span><br><span class="line"><span class="language-css">    <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">  &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>内容4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>内容5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>	</span><br></pre></td></tr></table></figure>
-
-<p><strong>“内容1”“内容2”“内容5”将被渲染为红色</strong></p>
-<h3 id="root"><a href="#root" class="headerlink" title=":root"></a>:root</h3><p>根元素，就是html元素</p>
-<h3 id="empty"><a href="#empty" class="headerlink" title=":empty"></a>:empty</h3><p>代表里面完全空白的元素</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .box:empty &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    p标签的内容</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>以上代码，第一个.box的样式会被应用</p>
-<h3 id="not"><a href="#not" class="headerlink" title=":not()"></a>:not()</h3><p>否定伪类</p>
-<p>:not(x)</p>
-<p>x是一个简单选择器<br>元素选择器、通用选择器、属性选择器、类选择器、id选择器、伪类（除否定伪类)</p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>行内块（或非替换）元素的特殊性</tag>
-        <tag>结构伪类</tag>
       </tags>
   </entry>
   <entry>
@@ -562,6 +562,7 @@
 ]]></content>
       <categories>
         <category>CSS</category>
+        <category>flex布局</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -638,6 +639,7 @@
 ]]></content>
       <categories>
         <category>CSS</category>
+        <category>定位</category>
       </categories>
       <tags>
         <tag>CSS</tag>
@@ -733,6 +735,13 @@
 <li>双方使用会话密钥进行<strong>对称加密</strong>的数据请求与响应</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>计算机网络</category>
+        <category>HTTPS</category>
+        <category>HTTPS</category>
+        <category>对称加密</category>
+        <category>非对称加密</category>
+      </categories>
       <tags>
         <tag>HTTPS</tag>
         <tag>对称加密</tag>
@@ -786,7 +795,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="混合加密"><a href="#混合加密" class="headerlink" title="混合加密"></a>混合加密</h3><p>混合加密的原因在于：非对称加密虽然解决了密钥交换的问题；但是，非对称加密是基于复杂的数学难题，运算速度很慢，即使是 ECC 也要比 AES 差上好几个数量级。如果仅用非对称加密，虽然保证了安全，但通信速度有如乌龟、蜗牛，实用性就变成了零。</p>
+<h3 id="混合加密"><a href="#混合加密" class="headerlink" title="混合加密"></a>混合加密</h3><p><strong>混合加密实现了机密性</strong></p>
+<p>混合加密的原因在于：非对称加密虽然解决了密钥交换的问题；但是，非对称加密是基于复杂的数学难题，运算速度很慢，即使是 ECC 也要比 AES 差上好几个数量级。如果仅用非对称加密，虽然保证了安全，但通信速度有如乌龟、蜗牛，实用性就变成了零。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">plain = hello openssl</span><br><span class="line">count = <span class="number">1000</span></span><br><span class="line"></span><br><span class="line">aes_128_cbc enc/dec <span class="number">1000</span> times : <span class="number">51.</span>41ms, <span class="number">0.</span>25MB/s</span><br><span class="line"></span><br><span class="line">rsa_1024 enc/dec <span class="number">1000</span> times : <span class="number">105.</span>68ms, <span class="number">123.</span>02KB/s</span><br><span class="line"></span><br><span class="line">rsa_1024/aes ratio = <span class="number">2.06</span></span><br><span class="line"></span><br><span class="line">rsa_2048 enc/dec <span class="number">1000</span> times : <span class="number">580.</span>58ms, <span class="number">22.</span>39KB/s</span><br><span class="line"></span><br><span class="line">rsa_2048/aes ratio = <span class="number">11.29</span></span><br></pre></td></tr></table></figure>
 
 <p>可以看到，RSA 的运算速度是非常慢的，2048 位的加解密大约是 15KB&#x2F;S（微秒或毫秒级），而 AES128 则是 13MB&#x2F;S（纳秒级），差了几百倍。</p>
@@ -819,14 +829,20 @@
 <p>参考文档：<a href="https://time.geekbang.org/column/article/109062">https://time.geekbang.org/column/article/109062</a></p>
 ]]></content>
       <categories>
-        <category>HTTP</category>
-        <category>HTTPS</category>
         <category>计算机网络</category>
+        <category>HTTPS</category>
+        <category>HTTPS</category>
+        <category>对称加密</category>
+        <category>SSL/TLS</category>
+        <category>非对称加密</category>
       </categories>
       <tags>
         <tag>HTTPS</tag>
+        <tag>对称加密</tag>
+        <tag>非对称加密</tag>
         <tag>HTTP</tag>
         <tag>计算机网络</tag>
+        <tag>HTTPS机密性问题</tag>
       </tags>
   </entry>
   <entry>
@@ -947,8 +963,11 @@
 <p>TCP：有连接无状态，顺序发包顺序收包，按照收发的顺序管理报文。</p>
 ]]></content>
       <categories>
-        <category>HTTP</category>
         <category>计算机网络</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>头字段</category>
+        <category>状态码</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
@@ -1089,9 +1108,10 @@
 <p>清理缓存的方法有很多，比较常用的一种做法是使用自定义请求方法“PURGE”，发给代理服务器，要求删除 URI 对应的缓存数据。</p>
 ]]></content>
       <categories>
-        <category>HTTP</category>
         <category>计算机网络</category>
-        <category>代理</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>缓存代理</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
@@ -1200,103 +1220,12 @@
 </ul>
 ]]></content>
       <categories>
-        <category>HTTP</category>
         <category>计算机网络</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
         <tag>计算机网络</tag>
         <tag>HTTP的传输大文件的方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTTP学习笔记（二）</title>
-    <url>/2022/07/22/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="HTTP的数据类型与编码"><a href="#HTTP的数据类型与编码" class="headerlink" title="HTTP的数据类型与编码"></a>HTTP的数据类型与编码</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>电子邮件可以发送 ASCII 码以外的任意数据，方案的名字叫做“多用途互联网邮件扩展”（Multipurpose Internet Mail Extensions），简称为 <strong>MIME</strong>。</p>
-<p>HTTP “顺手牵羊”取了其中的一部分，用来标记 body 的数据类型，这就是我们平常总能听到的“MIME type”。</p>
-<p>MIME 把数据分成了八大类，每个大类下再细分出多个子类，形式是<strong>“type&#x2F;subtype”</strong>的字符串</p>
-<p>这里简单列举一下在 HTTP 里<strong>经常遇到的几个类别</strong>：</p>
-<ul>
-<li><strong>text</strong>：即文本格式的可读数据，我们最熟悉的应该就是 text&#x2F;html 了，表示超文本文档，此外还有纯文本 text&#x2F;plain、样式表 text&#x2F;css 等。</li>
-<li><strong>image</strong>：即图像文件，有 image&#x2F;gif、image&#x2F;jpeg、image&#x2F;png 等。</li>
-<li><strong>audio&#x2F;video</strong>：音频和视频数据，例如 audio&#x2F;mpeg、video&#x2F;mp4 等。</li>
-<li><strong>application</strong>：数据格式不固定，可能是文本也可能是二进制，必须由上层应用程序来解释。常见的有 application&#x2F;json，application&#x2F;javascript、application&#x2F;pdf 等，另外，如果实在是不知道数据是什么类型，像刚才说的“黑盒”，就会是 application&#x2F;octet-stream，即不透明的二进制数据。</li>
-</ul>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>MIME type 还不够，因为 HTTP 在传输时为了节约带宽，有时候还会压缩数据，为了不要让浏览器继续“猜”，还需要有一个“Encoding type”，告诉数据是用的什么编码格式，这样对方才能正确解压缩，还原出原始的数据。</p>
-<p>Encoding type 就少了很多，常用的只有下面三种：</p>
-<ul>
-<li><strong>gzip</strong>：GNU zip 压缩格式，也是互联网上最流行的压缩格式；</li>
-<li><strong>deflate</strong>：zlib（deflate）压缩格式，流行程度仅次于 gzip；</li>
-<li><strong>br</strong>：一种专门为 HTTP 优化的新压缩算法（Brotli）。</li>
-</ul>
-<h2 id="数据类型使用的头字段"><a href="#数据类型使用的头字段" class="headerlink" title="数据类型使用的头字段"></a>数据类型使用的头字段</h2><p>客户端用 Accept 头告诉服务器希望接收什么样的数据，而服务器用 Content 头告诉客户端实际发送了什么样的数据。</p>
-<ul>
-<li><strong>Accept</strong>：<strong>Accept（请求字段） 字段标记的是客户端可理解的 MIME type</strong>，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>: text/html,application/xml,image/webp,image/png</span><br></pre></td></tr></table></figure>
-
-<p>这就是告诉服务器：“我能够看懂 HTML、XML 的文本，还有 webp 和 png 的图片，请给我这四类格式的数据”。</p>
-<ul>
-<li><p><strong>Accept-Encoding</strong>：（请求字段）字段标记的是客户端支持的压缩格式，例如上面说的 gzip、deflate 等，同样也可以用“,”列出多个，服务器可以选择其中一种来压缩数据，实际使用的压缩格式放在响应头字段 Content-Encoding 里。</p>
-</li>
-<li><p><strong>Content-Type</strong>：（通用字段）服务器会在响应报文里用头字段 Content-Type 告诉实体数据的真实类型</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: text/html</span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: image/png</span><br></pre></td></tr></table></figure>
-
-<p>这样浏览器看到报文里的类型是“text&#x2F;html”就知道是 HTML 文件，会调用排版引擎渲染出页面，看到“image&#x2F;png”就知道是一个 PNG 文件，就会在页面上显示出图像。</p>
-<p>*<em>content-<em>（通用字段）字段也可以用在请求报文里，说明请求体的数据类型。</em></em></p>
-<ul>
-<li><strong>Content-Encoding</strong>：（通用字段）服务器使用的压缩格式。<ul>
-<li><strong>Content-Encoding（通用字段）</strong>和<strong>Accept-Encoding</strong>（请求字段）是可以省略的，如果请求报文里没有 Accept-Encoding 字段，就表示客户端不支持压缩数据；如果响应报文里没有 Content-Encoding 字段，就表示响应数据没有被压缩。</li>
-</ul>
-</li>
-</ul>
-<h2 id="语言类型与编码"><a href="#语言类型与编码" class="headerlink" title="语言类型与编码"></a>语言类型与编码</h2><ul>
-<li><strong>Accept-Language</strong>：（请求字段）标记了客户端可理解的自然语言，也允许用“,”做分隔符列出多个类型</li>
-</ul>
-<p>语言类型的子类型，与MIME TYPE不同，使用”-“作为分隔符，而MIME类型是”Type&#x2F;subType”</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span>, zh, en</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>Content-Language</strong>：（通用字段）服务器告诉客户端实体数据使用的实际语言类型，或者客户端告诉服务器body语言类型。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>Accept-Charset</strong>：浏览器可接受的字符集。</li>
-</ul>
-<p><strong>响应头里却没有对应的 Content-Charset，而是在 Content-Type 字段的数据类型后面用“charset&#x3D;xxx”来表示，这点需要特别注意。</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>-<span class="title class_">Charset</span>: gbk, utf-<span class="number">8</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: text/html; charset=utf-<span class="number">8</span></span><br></pre></td></tr></table></figure>
-
-<p>不过现在的浏览器都支持多种字符集，通常不会发送 Accept-Charset，而服务器也不会发送 Content-Language，因为使用的语言完全可以由字符集推断出来，所以在请求头里一般只会有 Accept-Language 字段，响应头里只会有 Content-Type 字段。</p>
-<h3 id="内容协商的质量值"><a href="#内容协商的质量值" class="headerlink" title="内容协商的质量值"></a>内容协商的质量值</h3><p>在 HTTP 协议里用 Accept、Accept-Encoding、Accept-Language 等请求头字段进行内容协商的时候，还可以用一种特殊的“q”参数表示权重来设定优先级，这里的“q”是“quality factor”的意思。</p>
-<p>权重的最大值是 1，最小值是 0.01，默认值是 1，如果值是 0 就表示拒绝。具体的形式是在数据类型或语言代码后面加一个“;”，然后是“q&#x3D;value”。</p>
-<p>这里要提醒的是“;”的用法，在大多数编程语言里“;”的断句语气要强于“,”，而在 HTTP 的内容协商里却恰好反了过来，“;”的意义是小于“,”的。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>: text/html,application/xml;q=<span class="number">0.9</span>,*<span class="comment">/*;q=0.8</span></span><br></pre></td></tr></table></figure>
-
-<p>它表示浏览器最希望使用的是 HTML 文件，权重是 1，其次是 XML 文件，权重是 0.9，最后是任意数据类型，权重是 0.8。服务器收到请求头后，就会计算权重，再根据自己的实际情况优先输出 HTML 或者 XML。</p>
-<p>例题:</p>
-<p>要使用 POST 方法向服务器提交一些 JSON 格式的数据，里面包含有中文，请求头应该是什么样子的呢</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">POST</span> / <span class="variable constant_">HTTP</span>/<span class="number">1.1</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: application/json, charset=utf-<span class="number">8</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span>, zh</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<ul>
-<li>charset不同同时使用两种编码</li>
-<li>Content-Language表示的是body数据的语言，因为post带有body，所以要用Content-Language来告诉服务器，报文的body是什么。</li>
-<li>Accept-Language是请求头字段，只要是发请求就可以带。 </li>
-<li>Content-Language是实体头字段，只要是有body就可以带。</li>
-</ul>
-<p>对应关系：</p>
-<img alt='对应关系' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/WS7PL%29%5BGQ0S%7D%60TKFXR3L4KE.jpg" style="zoom:33%;" />]]></content>
-      <categories>
-        <category>HTTP</category>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>HTTP</tag>
-        <tag>计算机网络</tag>
-        <tag>HTTP的实体数据</tag>
       </tags>
   </entry>
   <entry>
@@ -1381,13 +1310,178 @@
 </ul>
 ]]></content>
       <categories>
-        <category>HTTP</category>
         <category>计算机网络</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>重定向</category>
       </categories>
       <tags>
         <tag>HTTP</tag>
         <tag>计算机网络</tag>
         <tag>HTTP的重定向和跳转</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTP学习笔记（二）</title>
+    <url>/2022/07/22/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="HTTP的数据类型与编码"><a href="#HTTP的数据类型与编码" class="headerlink" title="HTTP的数据类型与编码"></a>HTTP的数据类型与编码</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>电子邮件可以发送 ASCII 码以外的任意数据，方案的名字叫做“多用途互联网邮件扩展”（Multipurpose Internet Mail Extensions），简称为 <strong>MIME</strong>。</p>
+<p>HTTP “顺手牵羊”取了其中的一部分，用来标记 body 的数据类型，这就是我们平常总能听到的“MIME type”。</p>
+<p>MIME 把数据分成了八大类，每个大类下再细分出多个子类，形式是<strong>“type&#x2F;subtype”</strong>的字符串</p>
+<p>这里简单列举一下在 HTTP 里<strong>经常遇到的几个类别</strong>：</p>
+<ul>
+<li><strong>text</strong>：即文本格式的可读数据，我们最熟悉的应该就是 text&#x2F;html 了，表示超文本文档，此外还有纯文本 text&#x2F;plain、样式表 text&#x2F;css 等。</li>
+<li><strong>image</strong>：即图像文件，有 image&#x2F;gif、image&#x2F;jpeg、image&#x2F;png 等。</li>
+<li><strong>audio&#x2F;video</strong>：音频和视频数据，例如 audio&#x2F;mpeg、video&#x2F;mp4 等。</li>
+<li><strong>application</strong>：数据格式不固定，可能是文本也可能是二进制，必须由上层应用程序来解释。常见的有 application&#x2F;json，application&#x2F;javascript、application&#x2F;pdf 等，另外，如果实在是不知道数据是什么类型，像刚才说的“黑盒”，就会是 application&#x2F;octet-stream，即不透明的二进制数据。</li>
+</ul>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>MIME type 还不够，因为 HTTP 在传输时为了节约带宽，有时候还会压缩数据，为了不要让浏览器继续“猜”，还需要有一个“Encoding type”，告诉数据是用的什么编码格式，这样对方才能正确解压缩，还原出原始的数据。</p>
+<p>Encoding type 就少了很多，常用的只有下面三种：</p>
+<ul>
+<li><strong>gzip</strong>：GNU zip 压缩格式，也是互联网上最流行的压缩格式；</li>
+<li><strong>deflate</strong>：zlib（deflate）压缩格式，流行程度仅次于 gzip；</li>
+<li><strong>br</strong>：一种专门为 HTTP 优化的新压缩算法（Brotli）。</li>
+</ul>
+<h2 id="数据类型使用的头字段"><a href="#数据类型使用的头字段" class="headerlink" title="数据类型使用的头字段"></a>数据类型使用的头字段</h2><p>客户端用 Accept 头告诉服务器希望接收什么样的数据，而服务器用 Content 头告诉客户端实际发送了什么样的数据。</p>
+<ul>
+<li><strong>Accept</strong>：<strong>Accept（请求字段） 字段标记的是客户端可理解的 MIME type</strong>，可以用“,”做分隔符列出多个类型，让服务器有更多的选择余地。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>: text/html,application/xml,image/webp,image/png</span><br></pre></td></tr></table></figure>
+
+<p>这就是告诉服务器：“我能够看懂 HTML、XML 的文本，还有 webp 和 png 的图片，请给我这四类格式的数据”。</p>
+<ul>
+<li><p><strong>Accept-Encoding</strong>：（请求字段）字段标记的是客户端支持的压缩格式，例如上面说的 gzip、deflate 等，同样也可以用“,”列出多个，服务器可以选择其中一种来压缩数据，实际使用的压缩格式放在响应头字段 Content-Encoding 里。</p>
+</li>
+<li><p><strong>Content-Type</strong>：（通用字段）服务器会在响应报文里用头字段 Content-Type 告诉实体数据的真实类型</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: text/html</span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: image/png</span><br></pre></td></tr></table></figure>
+
+<p>这样浏览器看到报文里的类型是“text&#x2F;html”就知道是 HTML 文件，会调用排版引擎渲染出页面，看到“image&#x2F;png”就知道是一个 PNG 文件，就会在页面上显示出图像。</p>
+<p>*<em>content-<em>（通用字段）字段也可以用在请求报文里，说明请求体的数据类型。</em></em></p>
+<ul>
+<li><strong>Content-Encoding</strong>：（通用字段）服务器使用的压缩格式。<ul>
+<li><strong>Content-Encoding（通用字段）</strong>和<strong>Accept-Encoding</strong>（请求字段）是可以省略的，如果请求报文里没有 Accept-Encoding 字段，就表示客户端不支持压缩数据；如果响应报文里没有 Content-Encoding 字段，就表示响应数据没有被压缩。</li>
+</ul>
+</li>
+</ul>
+<h2 id="语言类型与编码"><a href="#语言类型与编码" class="headerlink" title="语言类型与编码"></a>语言类型与编码</h2><ul>
+<li><strong>Accept-Language</strong>：（请求字段）标记了客户端可理解的自然语言，也允许用“,”做分隔符列出多个类型</li>
+</ul>
+<p>语言类型的子类型，与MIME TYPE不同，使用”-“作为分隔符，而MIME类型是”Type&#x2F;subType”</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span>, zh, en</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Content-Language</strong>：（通用字段）服务器告诉客户端实体数据使用的实际语言类型，或者客户端告诉服务器body语言类型。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Content</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>Accept-Charset</strong>：浏览器可接受的字符集。</li>
+</ul>
+<p><strong>响应头里却没有对应的 Content-Charset，而是在 Content-Type 字段的数据类型后面用“charset&#x3D;xxx”来表示，这点需要特别注意。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>-<span class="title class_">Charset</span>: gbk, utf-<span class="number">8</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: text/html; charset=utf-<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>不过现在的浏览器都支持多种字符集，通常不会发送 Accept-Charset，而服务器也不会发送 Content-Language，因为使用的语言完全可以由字符集推断出来，所以在请求头里一般只会有 Accept-Language 字段，响应头里只会有 Content-Type 字段。</p>
+<h3 id="内容协商的质量值"><a href="#内容协商的质量值" class="headerlink" title="内容协商的质量值"></a>内容协商的质量值</h3><p>在 HTTP 协议里用 Accept、Accept-Encoding、Accept-Language 等请求头字段进行内容协商的时候，还可以用一种特殊的“q”参数表示权重来设定优先级，这里的“q”是“quality factor”的意思。</p>
+<p>权重的最大值是 1，最小值是 0.01，默认值是 1，如果值是 0 就表示拒绝。具体的形式是在数据类型或语言代码后面加一个“;”，然后是“q&#x3D;value”。</p>
+<p>这里要提醒的是“;”的用法，在大多数编程语言里“;”的断句语气要强于“,”，而在 HTTP 的内容协商里却恰好反了过来，“;”的意义是小于“,”的。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Accept</span>: text/html,application/xml;q=<span class="number">0.9</span>,*<span class="comment">/*;q=0.8</span></span><br></pre></td></tr></table></figure>
+
+<p>它表示浏览器最希望使用的是 HTML 文件，权重是 1，其次是 XML 文件，权重是 0.9，最后是任意数据类型，权重是 0.8。服务器收到请求头后，就会计算权重，再根据自己的实际情况优先输出 HTML 或者 XML。</p>
+<p>例题:</p>
+<p>要使用 POST 方法向服务器提交一些 JSON 格式的数据，里面包含有中文，请求头应该是什么样子的呢</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">POST</span> / <span class="variable constant_">HTTP</span>/<span class="number">1.1</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Type</span>: application/json, charset=utf-<span class="number">8</span></span><br><span class="line"><span class="title class_">Content</span>-<span class="title class_">Language</span>: zh-<span class="variable constant_">CN</span>, zh</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>charset不同同时使用两种编码</li>
+<li>Content-Language表示的是body数据的语言，因为post带有body，所以要用Content-Language来告诉服务器，报文的body是什么。</li>
+<li>Accept-Language是请求头字段，只要是发请求就可以带。 </li>
+<li>Content-Language是实体头字段，只要是有body就可以带。</li>
+</ul>
+<p>对应关系：</p>
+<img alt='对应关系' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/WS7PL%29%5BGQ0S%7D%60TKFXR3L4KE.jpg" style="zoom:33%;" />]]></content>
+      <categories>
+        <category>计算机网络</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>数据类型与编码</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>计算机网络</tag>
+        <tag>HTTP的实体数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTTP学习笔记（四）</title>
+    <url>/2022/07/22/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="短链接"><a href="#短链接" class="headerlink" title="短链接"></a>短链接</h1><p>HTTP 协议最初（0.9&#x2F;1.0）是个非常简单的协议，通信过程也采用了简单的“请求 - 应答”方式。</p>
+<p>它底层的数据传输基于 TCP&#x2F;IP，每次发送请求前需要先与服务器建立连接，收到响应报文后会立即关闭连接。</p>
+<p>因为客户端与服务器的整个连接过程很短暂，不会与服务器保持长时间的连接状态，所以就被称为“短连接”（short-lived connections）。早期的 HTTP 协议也被称为是“无连接”的协议。</p>
+<h1 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h1><p>针对短连接暴露出的缺点，HTTP 协议就提出了“长连接”的通信方式，也叫“持久连接”（persistent connections）、“连接保活”（keep alive）、“连接复用”（connection reuse）。</p>
+<p>其实解决办法也很简单，用的就是“成本均摊”的思路，既然 TCP 的连接和关闭非常耗时间，那么就把这个时间成本由原来的一个“请求 - 应答”均摊到多个“请求 - 应答”上。</p>
+<p>长短连接对比：</p>
+<img alt='长短连接对比' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/57b3d80234a1f1b8c538a376aa01d3b4.webp" style="zoom: 50%;" />
+
+<p>相关头字段：</p>
+<ul>
+<li><strong>Connection</strong>：（响应字段）想要长连，接取值<strong>keep-alive</strong>。由服务器告知客户端，服务器支持长连接。<ul>
+<li>在 HTTP&#x2F;1.1 中的连接都会默认启用长连接。不需要用什么特殊的头字段指定，只要向服务器发送了第一次请求，后续的请求都会重复利用第一次打开的 TCP 连接，也就是长连接，在这个连接上收发数据。当然也可以 明确使用长连接。</li>
+</ul>
+</li>
+</ul>
+<p>缺点：</p>
+<p>TCP 连接长时间不关闭，服务器必须在内存里保存它的状态，这就占用了服务器的资源。</p>
+<p>如果有大量的空闲长连接只连不发，就会很快耗尽服务器的资源，导致服务器无法为真正有需要的用户提供服务。</p>
+<p>所以，长连接也需要在恰当的时间关闭，不能永远保持与服务器的连接，<strong>这在客户端或者服务器都可以做到。</strong></p>
+<ul>
+<li><strong>Connection:</strong> （请求字段）close。客户端告知服务端，停止长连接。同时在客户端的响应字段也加上<strong>Connection: close</strong>，此时，长连接关闭。</li>
+</ul>
+<p>服务器端通常不会主动关闭连接，但也可以使用一些策略。拿 Nginx 来举例，它有两种方式：</p>
+<ol>
+<li>使用“keepalive_timeout”指令，设置长连接的超时时间，如果在一段时间内连接上没有任何数据收发就主动断开连接，避免空闲连接占用系统资源。</li>
+<li>使用“keepalive_requests”指令，设置长连接上可发送的最大请求次数。比如设置成 1000，那么当 Nginx 在这个连接上处理了 1000 个请求后，也会主动断开连接。</li>
+<li>另外，客户端和服务器都可以在报文里附加通用头字段“Keep-Alive: timeout&#x3D;value”，限定长连接的超时时间。但这个字段的约束力并不强，通信的双方可能并不会遵守，所以不太常见。</li>
+</ol>
+<h1 id="队头阻塞"><a href="#队头阻塞" class="headerlink" title="队头阻塞"></a>队头阻塞</h1><p>“队头阻塞”与短连接和长连接无关，而是由 HTTP 基本的“请求 - 应答”模型所导致的。</p>
+<p>根源：HTTP是半双工的协议，只能一发一收，这是对头阻塞的本质。</p>
+<p>因为 HTTP 规定报文必须是“一发一收”，这就形成了一个先进先出的“串行”队列。队列里的请求没有轻重缓急的优先级，只有入队的先后顺序，排在最前面的请求被最优先处理。</p>
+<p>如果<strong>队首的请求因为处理的太慢耽误了时间，那么队列里后面的所有请求也不得不跟着一起等待，结果就是其他的请求承担了不应有的时间成本。</strong></p>
+<img alt='队头阻塞' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/6a6d30a89fb085d5f1773a887aaf5572.webp" style="zoom:50%;" />
+
+<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>请求 - 应答”模型不能变，所以“队头阻塞”问题在 HTTP&#x2F;1.1 里无法解决，只能缓解。</p>
+<h2 id="并发连接"><a href="#并发连接" class="headerlink" title="并发连接"></a>并发连接</h2><p>就是同时对一个域名发起多个长连接，用数量来解决质量的问题。</p>
+<p>但这种方式也存在缺陷。如果每个客户端都想自己快，建立很多个连接，用户数×并发数就会是个天文数字。服务器的资源根本就扛不住，或者被服务器认为是恶意攻击，反而会造成“拒绝服务”。</p>
+<p>所以，HTTP 协议建议客户端使用并发，但不能“滥用”并发。RFC2616 里明确限制每个客户端最多并发 2 个连接。不过实践证明这个数字实在是太小了，众多浏览器都“无视”标准，把这个上限提高到了 6~8。后来修订的 RFC7230 也就“顺水推舟”，取消了这个“2”的限制。</p>
+<h2 id="域名分片"><a href="#域名分片" class="headerlink" title="域名分片"></a>域名分片</h2><p>由于HTTP和浏览器的并发限制，该方法还是用数量来解决质量的思路，</p>
+<p>即：建立多个域名到同一个ip的映射，而这些域名都指向同一台服务器，对于网络请求进一步分流，这样实际的长连接就上去了。</p>
+<p>疑问：多开几个域名，最终都是指向一个服务器，那跟都直接连一个服务器的效果一样，对服务器的性能要求一样，没有减少后端的压力？</p>
+<p>域名分片解决的是客户端并发的问题，可以创建更多的连接。 比如浏览器限制一个域名最多6个连接，域名分3片，那么浏览器就可以同时建立18个连接，显然就能够并发更多请求，获取数据也就快了。</p>
+<p>其他知识补充：</p>
+<ul>
+<li>服务端开发，长短连接如何选择？<ul>
+<li>一般使用长连接，除非明确知道只会发送一个请求，比如游戏内</li>
+<li>连接兑换码服务进行礼包兑换。</li>
+</ul>
+</li>
+<li>并发请求和并发连接<ul>
+<li>并发请求：服务端的概念，有多个客户端连接服务器。</li>
+<li>并发连接：客户端的概念，一个浏览器并发多个连接，访问服务器（有可能是一个用户）。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>长短连接</category>
+      </categories>
+      <tags>
+        <tag>HTTP</tag>
+        <tag>计算机网络</tag>
+        <tag>HTTP的连接管理</tag>
       </tags>
   </entry>
   <entry>
@@ -1605,8 +1699,10 @@
 </ul>
 ]]></content>
       <categories>
-        <category>HTTP</category>
         <category>计算机网络</category>
+        <category>HTTP</category>
+        <category>HTTP</category>
+        <category>Cookie</category>
         <category>缓存</category>
       </categories>
       <tags>
@@ -1673,78 +1769,113 @@
 ]]></content>
       <categories>
         <category>js</category>
+        <category>异常处理</category>
       </categories>
       <tags>
         <tag>js异常处理</tag>
       </tags>
   </entry>
   <entry>
-    <title>HTTP学习笔记（四）</title>
-    <url>/2022/07/22/HTTP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="短链接"><a href="#短链接" class="headerlink" title="短链接"></a>短链接</h1><p>HTTP 协议最初（0.9&#x2F;1.0）是个非常简单的协议，通信过程也采用了简单的“请求 - 应答”方式。</p>
-<p>它底层的数据传输基于 TCP&#x2F;IP，每次发送请求前需要先与服务器建立连接，收到响应报文后会立即关闭连接。</p>
-<p>因为客户端与服务器的整个连接过程很短暂，不会与服务器保持长时间的连接状态，所以就被称为“短连接”（short-lived connections）。早期的 HTTP 协议也被称为是“无连接”的协议。</p>
-<h1 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h1><p>针对短连接暴露出的缺点，HTTP 协议就提出了“长连接”的通信方式，也叫“持久连接”（persistent connections）、“连接保活”（keep alive）、“连接复用”（connection reuse）。</p>
-<p>其实解决办法也很简单，用的就是“成本均摊”的思路，既然 TCP 的连接和关闭非常耗时间，那么就把这个时间成本由原来的一个“请求 - 应答”均摊到多个“请求 - 应答”上。</p>
-<p>长短连接对比：</p>
-<img alt='长短连接对比' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/57b3d80234a1f1b8c538a376aa01d3b4.webp" style="zoom: 50%;" />
+    <title>node学习笔记（一）</title>
+    <url>/2022/07/12/node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>node是使用C++、C、js（给js本身调用时提供的一些api）等编写的</p>
+<p>node的核心层：<strong>libuv是由C编写的库</strong>；底层通过对操作系统的一些调用由<strong>中间层</strong><code>libuv</code>来完成</p>
+<p>libuv提供了<strong>事件循环、文件系统读写、网络IO、线程池</strong>等等内容</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构"></p>
+<center>node架构图</center>
 
-<p>相关头字段：</p>
-<ul>
-<li><strong>Connection</strong>：（响应字段）想要长连，接取值<strong>keep-alive</strong>。由服务器告知客户端，服务器支持长连接。<ul>
-<li>在 HTTP&#x2F;1.1 中的连接都会默认启用长连接。不需要用什么特殊的头字段指定，只要向服务器发送了第一次请求，后续的请求都会重复利用第一次打开的 TCP 连接，也就是长连接，在这个连接上收发数据。当然也可以 明确使用长连接。</li>
+<h1 id="Node应用场景"><a href="#Node应用场景" class="headerlink" title="Node应用场景"></a>Node应用场景</h1><ul>
+<li>前端开发的库都是以node包的形式进行管理；</li>
+<li>npm，cnpm、yarn、pnpm成为前端开发使用最多的工具；</li>
+<li>使用Nodejs作为web服务器开发、中间件、代理服务器；</li>
+<li>大量项目需要借助Node.js完成前后端渲染的同构应用;（SSR）</li>
+<li>资深前端工程师需要为项目编写脚本工具；（前端工程师编写脚本通常会使用JavaScript）</li>
+<li>很多企业在使用Electron来开发桌面应用程序;（Electron是基于Node的并且需要Node环境）</li>
 </ul>
-</li>
-</ul>
-<p>缺点：</p>
-<p>TCP 连接长时间不关闭，服务器必须在内存里保存它的状态，这就占用了服务器的资源。</p>
-<p>如果有大量的空闲长连接只连不发，就会很快耗尽服务器的资源，导致服务器无法为真正有需要的用户提供服务。</p>
-<p>所以，长连接也需要在恰当的时间关闭，不能永远保持与服务器的连接，<strong>这在客户端或者服务器都可以做到。</strong></p>
-<ul>
-<li><strong>Connection:</strong> （请求字段）close。客户端告知服务端，停止长连接。同时在客户端的响应字段也加上<strong>Connection: close</strong>，此时，长连接关闭。</li>
-</ul>
-<p>服务器端通常不会主动关闭连接，但也可以使用一些策略。拿 Nginx 来举例，它有两种方式：</p>
-<ol>
-<li>使用“keepalive_timeout”指令，设置长连接的超时时间，如果在一段时间内连接上没有任何数据收发就主动断开连接，避免空闲连接占用系统资源。</li>
-<li>使用“keepalive_requests”指令，设置长连接上可发送的最大请求次数。比如设置成 1000，那么当 Nginx 在这个连接上处理了 1000 个请求后，也会主动断开连接。</li>
-<li>另外，客户端和服务器都可以在报文里附加通用头字段“Keep-Alive: timeout&#x3D;value”，限定长连接的超时时间。但这个字段的约束力并不强，通信的双方可能并不会遵守，所以不太常见。</li>
-</ol>
-<h1 id="队头阻塞"><a href="#队头阻塞" class="headerlink" title="队头阻塞"></a>队头阻塞</h1><p>“队头阻塞”与短连接和长连接无关，而是由 HTTP 基本的“请求 - 应答”模型所导致的。</p>
-<p>根源：HTTP是半双工的协议，只能一发一收，这是对头阻塞的本质。</p>
-<p>因为 HTTP 规定报文必须是“一发一收”，这就形成了一个先进先出的“串行”队列。队列里的请求没有轻重缓急的优先级，只有入队的先后顺序，排在最前面的请求被最优先处理。</p>
-<p>如果<strong>队首的请求因为处理的太慢耽误了时间，那么队列里后面的所有请求也不得不跟着一起等待，结果就是其他的请求承担了不应有的时间成本。</strong></p>
-<img alt='队头阻塞' src="https://hrmtest.oss-cn-beijing.aliyuncs.com/6a6d30a89fb085d5f1773a887aaf5572.webp" style="zoom:50%;" />
+<h1 id="Node版本管理"><a href="#Node版本管理" class="headerlink" title="Node版本管理"></a>Node版本管理</h1><p>macOS：n&#x2F;nvm</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm i -g n</span><br><span class="line">n --version</span><br><span class="line"><span class="comment">// 安装最新的稳定版本</span></span><br><span class="line">n lts</span><br><span class="line"><span class="comment">// 安装最新的版本</span></span><br><span class="line">n latest</span><br><span class="line"><span class="comment">// 查看所有的版本</span></span><br><span class="line">n</span><br></pre></td></tr></table></figure>
 
-<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><p>请求 - 应答”模型不能变，所以“队头阻塞”问题在 HTTP&#x2F;1.1 里无法解决，只能缓解。</p>
-<h2 id="并发连接"><a href="#并发连接" class="headerlink" title="并发连接"></a>并发连接</h2><p>就是同时对一个域名发起多个长连接，用数量来解决质量的问题。</p>
-<p>但这种方式也存在缺陷。如果每个客户端都想自己快，建立很多个连接，用户数×并发数就会是个天文数字。服务器的资源根本就扛不住，或者被服务器认为是恶意攻击，反而会造成“拒绝服务”。</p>
-<p>所以，HTTP 协议建议客户端使用并发，但不能“滥用”并发。RFC2616 里明确限制每个客户端最多并发 2 个连接。不过实践证明这个数字实在是太小了，众多浏览器都“无视”标准，把这个上限提高到了 6~8。后来修订的 RFC7230 也就“顺水推舟”，取消了这个“2”的限制。</p>
-<h2 id="域名分片"><a href="#域名分片" class="headerlink" title="域名分片"></a>域名分片</h2><p>由于HTTP和浏览器的并发限制，该方法还是用数量来解决质量的思路，</p>
-<p>即：建立多个域名到同一个ip的映射，而这些域名都指向同一台服务器，对于网络请求进一步分流，这样实际的长连接就上去了。</p>
-<p>疑问：多开几个域名，最终都是指向一个服务器，那跟都直接连一个服务器的效果一样，对服务器的性能要求一样，没有减少后端的压力？</p>
-<p>域名分片解决的是客户端并发的问题，可以创建更多的连接。 比如浏览器限制一个域名最多6个连接，域名分3片，那么浏览器就可以同时建立18个连接，显然就能够并发更多请求，获取数据也就快了。</p>
-<p>其他知识补充：</p>
+<p>window：nvm-windows</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装最新的node版本n</span></span><br><span class="line">nvm install latest</span><br><span class="line"><span class="comment">// 罗列目前安装的所有版本</span></span><br><span class="line">nvm list</span><br><span class="line"><span class="comment">// 版本切换(需要管理员权限)</span></span><br><span class="line">mvn use</span><br></pre></td></tr></table></figure>
+
+<h1 id="Node的输入和输出"><a href="#Node的输入和输出" class="headerlink" title="Node的输入和输出"></a>Node的输入和输出</h1><h2 id="process（输入）"><a href="#process（输入）" class="headerlink" title="process（输入）"></a>process（输入）</h2><ul>
+<li>process（进程对象）可用来获取用户终端输入</li>
+</ul>
+<p>示例：</p>
+<p>在终端输入</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node test.<span class="property">js</span> <span class="number">10</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>test.js文件代码如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// argv=&gt;arguments vector</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(process.<span class="property">argv</span>);</span><br><span class="line"><span class="comment">// [ &#x27;D:\\nvmNode\\node.exe&#x27;, &#x27;F:\\myBlog\\test.js&#x27;, &#x27;10&#x27;, &#x27;20&#x27; ]</span></span><br><span class="line"><span class="comment">// 第一个参数是当前node所在的文件夹，第二个参数是需要运行的js文件，之后的参数是用户的输入</span></span><br><span class="line"><span class="keyword">let</span> [, , str1, str2] = process.<span class="property">argv</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((str1 + str2).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他应用应用场景</span></span><br><span class="line"><span class="comment">// 以下命令可以让webpack来判断当前所处的是开发环境还是生产环境</span></span><br><span class="line">node ./webpack.<span class="property">config</span>.<span class="property">js</span> env=development</span><br></pre></td></tr></table></figure>
+
+<p>process还能够查看系统的其他一些信息：<strong>操作系统类型</strong>、<strong>node版本</strong>和<strong>V8的版本</strong>等。</p>
+<h3 id="其他方法："><a href="#其他方法：" class="headerlink" title="其他方法："></a>其他方法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">nextTick</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="console（输出）"><a href="#console（输出）" class="headerlink" title="console（输出）"></a>console（输出）</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 清空控制台</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">clear</span>();</span><br><span class="line"><span class="comment">// 输出调用栈</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">trace</span>()</span><br></pre></td></tr></table></figure>
+
+<h1 id="Node全局对象"><a href="#Node全局对象" class="headerlink" title="Node全局对象"></a>Node全局对象</h1><h2 id="特殊的全局对象"><a href="#特殊的全局对象" class="headerlink" title="特殊的全局对象"></a>特殊的全局对象</h2><p><code>__dirname</code>、<code>__filename</code>、<code>exports</code>、<code>module</code>、<code>require()</code></p>
+<p>这些全局对象是模块中的变量，只是每个模块都有，看起来像全局变量，但是在命令行交互是不能使用的。</p>
 <ul>
-<li>服务端开发，长短连接如何选择？<ul>
-<li>一般使用长连接，除非明确知道只会发送一个请求，比如游戏内</li>
-<li>连接兑换码服务进行礼包兑换。</li>
+<li>__dirname：表示当前文件所在的目录；</li>
+<li>__filename：表示当前文件所在的目录以及文件名；</li>
 </ul>
-</li>
-<li>并发请求和并发连接<ul>
-<li>并发请求：服务端的概念，有多个客户端连接服务器。</li>
-<li>并发连接：客户端的概念，一个浏览器并发多个连接，访问服务器（有可能是一个用户）。</li>
-</ul>
-</li>
-</ul>
+<p>注意：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> === <span class="built_in">exports</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="定时器函数"><a href="#定时器函数" class="headerlink" title="定时器函数"></a>定时器函数</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">setImmediate</span><br><span class="line"><span class="comment">// 添加到下一次的tick队列</span></span><br><span class="line">process.<span class="property">nextTick</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h2><p>在node环境下，全局对象为<code>global</code>；在浏览器环境下，全局对象为<code>window</code>；在后来的版中，使用统一的名称<code>globalThis</code>作为全局对象，在浏览器环境指向<code>this</code>，在node环境指向<code>global</code>。</p>
+<p>说明：使用<code>var</code>声明的变量在浏览器环境下会自动加入到window的一个属性中，在node环境下不会。</p>
 ]]></content>
       <categories>
-        <category>HTTP</category>
-        <category>计算机网络</category>
+        <category>Node</category>
+        <category>Node的输入和输出</category>
       </categories>
       <tags>
-        <tag>HTTP</tag>
-        <tag>计算机网络</tag>
-        <tag>HTTP的连接管理</tag>
+        <tag>Node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端相关文档</title>
+    <url>/2022/06/03/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p><strong>精灵图制作：</strong><a href="https://www.toptal.com/developers/css/sprite-generator">https://www.toptal.com/developers/css/sprite-generator</a></p>
+<p><strong>确定精灵图位置：</strong><a href="http://www.spritecow.com/">http://www.spritecow.com/</a></p>
+<p><strong>阿里字体图标库：</strong><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+<p><strong>LESS-&gt;CSS：</strong><a href="https://lesscss.org/less-preview/">https://lesscss.org/less-preview/</a></p>
+<p><strong>移动端适配（阿里）：</strong><a href="https://github.com/amfe/lib-flexible">https://github.com/amfe/lib-flexible</a><br><strong>npm命令：</strong><a href="https://docs.npmjs.com/cli/v8/commands">https://docs.npmjs.com/cli/v8/commands</a><br><strong>pnpm：</strong><a href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></p>
+]]></content>
+      <categories>
+        <category>开发文档</category>
+      </categories>
+      <tags>
+        <tag>前端开发相关文档</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手写promise</title>
+    <url>/2022/04/15/%E6%89%8B%E5%86%99promise/</url>
+    <content><![CDATA[<h1 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h1><p>ECMAscript 6 原生提供了 Promise 对象。</p>
+<p>Promise 对象代表了未来将要发生的事件，用来传递异步操作的消息。</p>
+<h1 id="Promise-对象有以下两个特点"><a href="#Promise-对象有以下两个特点" class="headerlink" title="Promise 对象有以下两个特点:"></a>Promise 对象有以下两个特点:</h1><p>对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：</p>
+<ul>
+<li>pending: 初始状态，不是成功或失败状态。</li>
+<li>fulfilled: 意味着操作成功完成。</li>
+<li>rejected: 意味着操作失败。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 参考PromiseA+规范,同时根据es自身的实现逻辑添加其他操作</span></span><br><span class="line"><span class="comment">// https://promisesaplus.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态字符串(常量)</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_PENDING</span> = <span class="string">&#x27;pending&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> = <span class="string">&#x27;fulfilled&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_REJECTED</span> = <span class="string">&#x27;rejected&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工具函数</span></span><br><span class="line"><span class="comment">// 公共逻辑抽取</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">execFunctionWithCatchError</span>(<span class="params">fn, data, resolve, reject</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="title function_">fn</span>(data);</span><br><span class="line">    <span class="title function_">resolve</span>(result)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="title function_">reject</span>(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPromise</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_PENDING</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">reason</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onRejectedFns</span> = [];</span><br><span class="line">    <span class="comment">// 调用resolve状态会改变为fulfilled(resolved)</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">resolve</span> = (<span class="params">value</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_FULFILLED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; fulfilled</span></span><br><span class="line">          <span class="comment">// 保存fulfilled的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">          <span class="comment">// 执行then方法的onFulfilled回调(第一个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">value</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 调用reject状态会改变为rejected</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">reject</span> = (<span class="params">reason</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_REJECTED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; rejected</span></span><br><span class="line">          <span class="comment">// 保存rejected的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">reason</span> = reason;</span><br><span class="line">          <span class="comment">// 执行then方法的onRejected回调(第二个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">reason</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="title function_">executor</span>(resolve, reject);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">then</span>(<span class="params">onFulfilled, onRejected</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果reject或者throw异常,但是没有传入then的第二个回调,需要把这个异常或者reason一直抛直到被catch捕获</span></span><br><span class="line">    onRejected = onRejected || (<span class="function"><span class="params">err</span> =&gt;</span> &#123; <span class="keyword">throw</span> err &#125;);</span><br><span class="line">    <span class="comment">// 如果resolve没有传入,则会造成value没有处理的回调,会造成链式调用的断层</span></span><br><span class="line">    onFulfilled = onFulfilled || (<span class="function"><span class="params">value</span> =&gt;</span> value);</span><br><span class="line">    <span class="comment">// then方法返回一个MyPromise对象</span></span><br><span class="line">    <span class="comment">// resolve的value或者reject的reason都可以被认为是then方法的返回值</span></span><br><span class="line">    <span class="comment">// 使用resolve还是reject取决于传入的onFulfilled, onRejected的返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 1.如果执行then时,状态已经确定了,直接执行onFulfilled或onRejected,不用添加到执行队列里面</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> &amp;&amp; <span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">        <span class="comment">//   resolve(value);</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_REJECTED</span> &amp;&amp; <span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">        <span class="comment">//   // 因为then方法的第二个回调也是返回一个MyPromise对象,所以此处也需要调用resolve而不是reject</span></span><br><span class="line">        <span class="comment">//   resolve(reason)</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 2.如果执行then时,状态还是pending,添加到执行队列里面</span></span><br><span class="line">      <span class="comment">// 因为promise的then可链式调用,保存onFulfilled, onRejected由数组来保存</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">            <span class="comment">//   resolve(value);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">            <span class="comment">//   resolve(reason);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// catch方法和finaly方法属于es6特有,不属于promiseA+规范</span></span><br><span class="line">  <span class="keyword">catch</span>(onRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="literal">undefined</span>, onRejected);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">finally</span>(<span class="params">onFinally</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 类方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">resolve</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(value);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">reject</span>(<span class="params">reason</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">reject</span>(reason);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// all</span></span><br><span class="line">  <span class="comment">// 只有所有的promise都resolve,才resolve</span></span><br><span class="line">  <span class="comment">// 有一个promise失败,就reject</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">all</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = []</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 此处保证了resolve返回的顺序和传入的自定义promise顺序一致</span></span><br><span class="line">          values[index] = res</span><br><span class="line">          count++;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(err)</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// allSettled</span></span><br><span class="line">  <span class="comment">// 不执行reject,只执行resolve</span></span><br><span class="line">  <span class="comment">// 返回的promise的包括status和value(reason)</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">allSettled</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;fulfilled&#x27;</span>,</span><br><span class="line">            <span class="attr">value</span>: res</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          count++</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;rejected&#x27;</span>,</span><br><span class="line">            <span class="attr">reason</span>: err</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// race</span></span><br><span class="line">  <span class="comment">// 返回最先完成resolve或者reject的promise的执行结果</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">race</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, reject)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// any</span></span><br><span class="line">  <span class="comment">// 返回第一个resolve的promise</span></span><br><span class="line">  <span class="comment">// 若所有的promise都reject,则reject(new AggregateError(reasons))</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">any</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reasons = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          reasons[index] = err;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="comment">// reject(&#x27;all failed&#x27;);</span></span><br><span class="line">            <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">AggregateError</span>(reasons));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">1</span>)</span><br><span class="line">  &#125;, <span class="number">4000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise2 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">2</span>)</span><br><span class="line">  &#125;, <span class="number">5000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> promise3 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">3</span>)</span><br><span class="line">  &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title class_">MyPromise</span>.<span class="title function_">any</span>([promise, promise2, promise3]).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;err&#x27;</span>, err.<span class="property">errors</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>js底层原理</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>前端</tag>
+        <tag>promise</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -1884,75 +2015,26 @@
 <p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220713213739985.png" alt="ESModule的解析流程"></p>
 ]]></content>
       <categories>
-        <category>node</category>
         <category>前端模块化</category>
+        <category>CommonJS</category>
+        <category>ESMoule</category>
       </categories>
       <tags>
-        <tag>node</tag>
+        <tag>Node</tag>
         <tag>前端模块化</tag>
         <tag>ESModule</tag>
         <tag>CommonJS</tag>
       </tags>
   </entry>
   <entry>
-    <title>node学习笔记（一）</title>
-    <url>/2022/07/12/node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p>node是使用C++、C、js（给js本身调用时提供的一些api）等编写的</p>
-<p>node的核心层：<strong>libuv是由C编写的库</strong>；底层通过对操作系统的一些调用由<strong>中间层</strong><code>libuv</code>来完成</p>
-<p>libuv提供了<strong>事件循环、文件系统读写、网络IO、线程池</strong>等等内容</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构"></p>
-<center>node架构图</center>
-
-<h1 id="Node应用场景"><a href="#Node应用场景" class="headerlink" title="Node应用场景"></a>Node应用场景</h1><ul>
-<li>前端开发的库都是以node包的形式进行管理；</li>
-<li>npm，cnpm、yarn、pnpm成为前端开发使用最多的工具；</li>
-<li>使用Nodejs作为web服务器开发、中间件、代理服务器；</li>
-<li>大量项目需要借助Node.js完成前后端渲染的同构应用;（SSR）</li>
-<li>资深前端工程师需要为项目编写脚本工具；（前端工程师编写脚本通常会使用JavaScript）</li>
-<li>很多企业在使用Electron来开发桌面应用程序;（Electron是基于Node的并且需要Node环境）</li>
-</ul>
-<h1 id="Node版本管理"><a href="#Node版本管理" class="headerlink" title="Node版本管理"></a>Node版本管理</h1><p>macOS：n&#x2F;nvm</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm i -g n</span><br><span class="line">n --version</span><br><span class="line"><span class="comment">// 安装最新的稳定版本</span></span><br><span class="line">n lts</span><br><span class="line"><span class="comment">// 安装最新的版本</span></span><br><span class="line">n latest</span><br><span class="line"><span class="comment">// 查看所有的版本</span></span><br><span class="line">n</span><br></pre></td></tr></table></figure>
-
-<p>window：nvm-windows</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安装最新的node版本n</span></span><br><span class="line">nvm install latest</span><br><span class="line"><span class="comment">// 罗列目前安装的所有版本</span></span><br><span class="line">nvm list</span><br><span class="line"><span class="comment">// 版本切换(需要管理员权限)</span></span><br><span class="line">mvn use</span><br></pre></td></tr></table></figure>
-
-<h1 id="Node的输入和输出"><a href="#Node的输入和输出" class="headerlink" title="Node的输入和输出"></a>Node的输入和输出</h1><h2 id="process（输入）"><a href="#process（输入）" class="headerlink" title="process（输入）"></a>process（输入）</h2><ul>
-<li>process（进程对象）可用来获取用户终端输入</li>
-</ul>
-<p>示例：</p>
-<p>在终端输入</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">node test.<span class="property">js</span> <span class="number">10</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<p>test.js文件代码如下</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// argv=&gt;arguments vector</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(process.<span class="property">argv</span>);</span><br><span class="line"><span class="comment">// [ &#x27;D:\\nvmNode\\node.exe&#x27;, &#x27;F:\\myBlog\\test.js&#x27;, &#x27;10&#x27;, &#x27;20&#x27; ]</span></span><br><span class="line"><span class="comment">// 第一个参数是当前node所在的文件夹，第二个参数是需要运行的js文件，之后的参数是用户的输入</span></span><br><span class="line"><span class="keyword">let</span> [, , str1, str2] = process.<span class="property">argv</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((str1 + str2).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他应用应用场景</span></span><br><span class="line"><span class="comment">// 以下命令可以让webpack来判断当前所处的是开发环境还是生产环境</span></span><br><span class="line">node ./webpack.<span class="property">config</span>.<span class="property">js</span> env=development</span><br></pre></td></tr></table></figure>
-
-<p>process还能够查看系统的其他一些信息：<strong>操作系统类型</strong>、<strong>node版本</strong>和<strong>V8的版本</strong>等。</p>
-<h3 id="其他方法："><a href="#其他方法：" class="headerlink" title="其他方法："></a>其他方法：</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="title function_">nextTick</span>()</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="console（输出）"><a href="#console（输出）" class="headerlink" title="console（输出）"></a>console（输出）</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 清空控制台</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">clear</span>();</span><br><span class="line"><span class="comment">// 输出调用栈</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">trace</span>()</span><br></pre></td></tr></table></figure>
-
-<h1 id="Node全局对象"><a href="#Node全局对象" class="headerlink" title="Node全局对象"></a>Node全局对象</h1><h2 id="特殊的全局对象"><a href="#特殊的全局对象" class="headerlink" title="特殊的全局对象"></a>特殊的全局对象</h2><p><code>__dirname</code>、<code>__filename</code>、<code>exports</code>、<code>module</code>、<code>require()</code></p>
-<p>这些全局对象是模块中的变量，只是每个模块都有，看起来像全局变量，但是在命令行交互是不能使用的。</p>
-<ul>
-<li>__dirname：表示当前文件所在的目录；</li>
-<li>__filename：表示当前文件所在的目录以及文件名；</li>
-</ul>
-<p>注意：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> === <span class="built_in">exports</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="定时器函数"><a href="#定时器函数" class="headerlink" title="定时器函数"></a>定时器函数</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span></span><br><span class="line"><span class="built_in">setInterval</span></span><br><span class="line">setImmediate</span><br><span class="line"><span class="comment">// 添加到下一次的tick队列</span></span><br><span class="line">process.<span class="property">nextTick</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="global对象"><a href="#global对象" class="headerlink" title="global对象"></a>global对象</h2><p>在node环境下，全局对象为<code>global</code>；在浏览器环境下，全局对象为<code>window</code>；在后来的版中，使用统一的名称<code>globalThis</code>作为全局对象，在浏览器环境指向<code>this</code>，在node环境指向<code>global</code>。</p>
-<p>说明：使用<code>var</code>声明的变量在浏览器环境下会自动加入到window的一个属性中，在node环境下不会。</p>
-]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
+    <title>经济学原理浅学（一）</title>
+    <url>/2022/06/08/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86%E6%B5%85%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
       <tags>
-        <tag>node</tag>
+        <tag>经济学原理</tag>
+        <tag>杂七杂八</tag>
+        <tag>弹性</tag>
+        <tag>弹性相关案例</tag>
       </tags>
   </entry>
   <entry>
@@ -2018,7 +2100,7 @@
 <p>说明：</p>
 <ul>
 <li>项目的node_modules文件夹下，仅有axios依赖（本项目仅仅依赖axios库，就避免了使用commonjs或者esmodule引入依赖时，不可以访问本不属于当前项目所设定的依赖包）；</li>
-<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#97;&#x78;&#105;&#111;&#x73;&#64;&#48;&#x2e;&#50;&#55;&#46;&#50;">&#97;&#x78;&#105;&#111;&#x73;&#64;&#48;&#x2e;&#50;&#55;&#46;&#50;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
+<li>node_modules的axios属于软链接，真正的文件位于<code>.pnpm</code>文件夹下，在<code>.pnpm</code>之下，有一个<a href="mailto:&#x61;&#x78;&#x69;&#x6f;&#x73;&#x40;&#48;&#46;&#50;&#x37;&#x2e;&#x32;">&#x61;&#x78;&#x69;&#x6f;&#x73;&#x40;&#48;&#46;&#50;&#x37;&#x2e;&#x32;</a>文件，其下有一个node_modules文件夹，包含了自身的源码（硬链接）以及axios所需要的其他依赖的软链接；</li>
 <li>在<code>axios@0.27.2/node_modules</code>目录之下，有<code>axios</code>的其他依赖软链接，其中，<code>form-data</code>的目录结构和<code>axios@0.27.2/node_modules</code>类似</li>
 </ul>
 <h2 id="pnpm的存储store"><a href="#pnpm的存储store" class="headerlink" title="pnpm的存储store"></a>pnpm的存储store</h2><ul>
@@ -2049,7 +2131,9 @@
       <categories>
         <category>前端包管理工具</category>
         <category>pnpm</category>
-        <category>操作系统</category>
+        <category>npm</category>
+        <category>cnpm</category>
+        <category>yarn</category>
       </categories>
       <tags>
         <tag>前端包管理工具</tag>
@@ -2059,47 +2143,6 @@
         <tag>yarn</tag>
         <tag>操作系统</tag>
         <tag>coderwhy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端相关文档</title>
-    <url>/2022/06/03/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p><strong>精灵图制作：</strong><a href="https://www.toptal.com/developers/css/sprite-generator">https://www.toptal.com/developers/css/sprite-generator</a></p>
-<p><strong>确定精灵图位置：</strong><a href="http://www.spritecow.com/">http://www.spritecow.com/</a></p>
-<p><strong>阿里字体图标库：</strong><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
-<p><strong>LESS-&gt;CSS：</strong><a href="https://lesscss.org/less-preview/">https://lesscss.org/less-preview/</a></p>
-<p><strong>移动端适配（阿里）：</strong><a href="https://github.com/amfe/lib-flexible">https://github.com/amfe/lib-flexible</a><br><strong>npm命令：</strong><a href="https://docs.npmjs.com/cli/v8/commands">https://docs.npmjs.com/cli/v8/commands</a><br><strong>pnpm：</strong><a href="https://pnpm.io/zh/motivation">https://pnpm.io/zh/motivation</a></p>
-]]></content>
-      <categories>
-        <category>开发文档</category>
-      </categories>
-      <tags>
-        <tag>前端开发相关文档</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>手写promise</title>
-    <url>/2022/04/15/%E6%89%8B%E5%86%99promise/</url>
-    <content><![CDATA[<h1 id="手写Promise"><a href="#手写Promise" class="headerlink" title="手写Promise"></a>手写Promise</h1><p>ECMAscript 6 原生提供了 Promise 对象。</p>
-<p>Promise 对象代表了未来将要发生的事件，用来传递异步操作的消息。</p>
-<h1 id="Promise-对象有以下两个特点"><a href="#Promise-对象有以下两个特点" class="headerlink" title="Promise 对象有以下两个特点:"></a>Promise 对象有以下两个特点:</h1><p>对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：</p>
-<ul>
-<li>pending: 初始状态，不是成功或失败状态。</li>
-<li>fulfilled: 意味着操作成功完成。</li>
-<li>rejected: 意味着操作失败。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 参考PromiseA+规范,同时根据es自身的实现逻辑添加其他操作</span></span><br><span class="line"><span class="comment">// https://promisesaplus.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 状态字符串(常量)</span></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_PENDING</span> = <span class="string">&#x27;pending&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> = <span class="string">&#x27;fulfilled&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">PROMISE_STATUS_REJECTED</span> = <span class="string">&#x27;rejected&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工具函数</span></span><br><span class="line"><span class="comment">// 公共逻辑抽取</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">execFunctionWithCatchError</span>(<span class="params">fn, data, resolve, reject</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="title function_">fn</span>(data);</span><br><span class="line">    <span class="title function_">resolve</span>(result)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="title function_">reject</span>(e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPromise</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">executor</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_PENDING</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">reason</span> = <span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span> = [];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">onRejectedFns</span> = [];</span><br><span class="line">    <span class="comment">// 调用resolve状态会改变为fulfilled(resolved)</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">resolve</span> = (<span class="params">value</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_FULFILLED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; fulfilled</span></span><br><span class="line">          <span class="comment">// 保存fulfilled的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">          <span class="comment">// 执行then方法的onFulfilled回调(第一个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">value</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 调用reject状态会改变为rejected</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">reject</span> = (<span class="params">reason</span>) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="comment">// 加入到微任务队列(异步,不影响主线程)</span></span><br><span class="line">        <span class="title function_">queueMicrotask</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// queueMicrotask是异步代码,此处需要重新判断状态</span></span><br><span class="line">          <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> !== <span class="variable constant_">PROMISE_STATUS_PENDING</span>) <span class="keyword">return</span>;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">status</span> = <span class="variable constant_">PROMISE_STATUS_REJECTED</span>;</span><br><span class="line">          <span class="comment">// pending ==&gt; rejected</span></span><br><span class="line">          <span class="comment">// 保存rejected的值</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">reason</span> = reason;</span><br><span class="line">          <span class="comment">// 执行then方法的onRejected回调(第二个回调)</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>(<span class="variable language_">this</span>.<span class="property">reason</span>));</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="title function_">executor</span>(resolve, reject);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">then</span>(<span class="params">onFulfilled, onRejected</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果reject或者throw异常,但是没有传入then的第二个回调,需要把这个异常或者reason一直抛直到被catch捕获</span></span><br><span class="line">    onRejected = onRejected || (<span class="function"><span class="params">err</span> =&gt;</span> &#123; <span class="keyword">throw</span> err &#125;);</span><br><span class="line">    <span class="comment">// 如果resolve没有传入,则会造成value没有处理的回调,会造成链式调用的断层</span></span><br><span class="line">    onFulfilled = onFulfilled || (<span class="function"><span class="params">value</span> =&gt;</span> value);</span><br><span class="line">    <span class="comment">// then方法返回一个MyPromise对象</span></span><br><span class="line">    <span class="comment">// resolve的value或者reject的reason都可以被认为是then方法的返回值</span></span><br><span class="line">    <span class="comment">// 使用resolve还是reject取决于传入的onFulfilled, onRejected的返回值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 1.如果执行then时,状态已经确定了,直接执行onFulfilled或onRejected,不用添加到执行队列里面</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_FULFILLED</span> &amp;&amp; <span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">        <span class="comment">//   resolve(value);</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_REJECTED</span> &amp;&amp; <span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="comment">// try &#123;</span></span><br><span class="line">        <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">        <span class="comment">//   // 因为then方法的第二个回调也是返回一个MyPromise对象,所以此处也需要调用resolve而不是reject</span></span><br><span class="line">        <span class="comment">//   resolve(reason)</span></span><br><span class="line">        <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">        <span class="comment">//   reject(error);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 公共抽取</span></span><br><span class="line">        <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 2.如果执行then时,状态还是pending,添加到执行队列里面</span></span><br><span class="line">      <span class="comment">// 因为promise的then可链式调用,保存onFulfilled, onRejected由数组来保存</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">status</span> === <span class="variable constant_">PROMISE_STATUS_PENDING</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onFulfilled === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onFulfilledFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const value = onFulfilled(this.value);</span></span><br><span class="line">            <span class="comment">//   resolve(value);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onFulfilled, <span class="variable language_">this</span>.<span class="property">value</span>, resolve, reject);</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> onRejected === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">onRejectedFns</span>.<span class="title function_">push</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// try &#123;</span></span><br><span class="line">            <span class="comment">//   const reason = onRejected(this.reason);</span></span><br><span class="line">            <span class="comment">//   resolve(reason);</span></span><br><span class="line">            <span class="comment">// &#125; catch (error) &#123;</span></span><br><span class="line">            <span class="comment">//   reject(error);</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// 公共抽取</span></span><br><span class="line">            <span class="title function_">execFunctionWithCatchError</span>(onRejected, <span class="variable language_">this</span>.<span class="property">reason</span>, resolve, reject);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// catch方法和finaly方法属于es6特有,不属于promiseA+规范</span></span><br><span class="line">  <span class="keyword">catch</span>(onRejected) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="literal">undefined</span>, onRejected);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">finally</span>(<span class="params">onFinally</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">onFinally</span>()</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 类方法</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">resolve</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(value);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">reject</span>(<span class="params">reason</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">reject</span>(reason);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// all</span></span><br><span class="line">  <span class="comment">// 只有所有的promise都resolve,才resolve</span></span><br><span class="line">  <span class="comment">// 有一个promise失败,就reject</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">all</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = []</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 此处保证了resolve返回的顺序和传入的自定义promise顺序一致</span></span><br><span class="line">          values[index] = res</span><br><span class="line">          count++;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">reject</span>(err)</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// allSettled</span></span><br><span class="line">  <span class="comment">// 不执行reject,只执行resolve</span></span><br><span class="line">  <span class="comment">// 返回的promise的包括status和value(reason)</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">allSettled</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> values = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;fulfilled&#x27;</span>,</span><br><span class="line">            <span class="attr">value</span>: res</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          count++</span><br><span class="line">          values[index] = &#123;</span><br><span class="line">            <span class="attr">status</span>: <span class="string">&#x27;rejected&#x27;</span>,</span><br><span class="line">            <span class="attr">reason</span>: err</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="title function_">resolve</span>(values)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// race</span></span><br><span class="line">  <span class="comment">// 返回最先完成resolve或者reject的promise的执行结果</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">race</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, reject)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// any</span></span><br><span class="line">  <span class="comment">// 返回第一个resolve的promise</span></span><br><span class="line">  <span class="comment">// 若所有的promise都reject,则reject(new AggregateError(reasons))</span></span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">any</span>(<span class="params">promises</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reasons = [];</span><br><span class="line">      <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">      promises.<span class="title function_">forEach</span>(<span class="function">(<span class="params">promise, index</span>) =&gt;</span> &#123;</span><br><span class="line">        promise.<span class="title function_">then</span>(resolve, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          count++;</span><br><span class="line">          reasons[index] = err;</span><br><span class="line">          <span class="keyword">if</span> (count === promises.<span class="property">length</span>) &#123;</span><br><span class="line">            <span class="comment">// reject(&#x27;all failed&#x27;);</span></span><br><span class="line">            <span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">AggregateError</span>(reasons));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">1</span>)</span><br><span class="line">  &#125;, <span class="number">4000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise2 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">2</span>)</span><br><span class="line">  &#125;, <span class="number">5000</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> promise3 = <span class="keyword">new</span> <span class="title class_">MyPromise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">reject</span>(<span class="number">3</span>)</span><br><span class="line">  &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title class_">MyPromise</span>.<span class="title function_">any</span>([promise, promise2, promise3]).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;err&#x27;</span>, err.<span class="property">errors</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>js</category>
-        <category>js实现原理</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>前端</tag>
-        <tag>promise</tag>
-        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -2210,7 +2253,7 @@
 ]]></content>
       <categories>
         <category>js</category>
-        <category>js实现原理</category>
+        <category>js底层原理</category>
       </categories>
       <tags>
         <tag>js</tag>
@@ -2220,17 +2263,6 @@
         <tag>generator</tag>
         <tag>await</tag>
         <tag>async</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>经济学原理浅学（一）</title>
-    <url>/2022/06/08/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86%E6%B5%85%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>经济学原理</tag>
-        <tag>杂七杂八</tag>
-        <tag>弹性</tag>
-        <tag>弹性相关案例</tag>
       </tags>
   </entry>
   <entry>
@@ -2353,6 +2385,115 @@
         <tag>税收</tag>
         <tag>税收的代价</tag>
         <tag>国际贸易</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进程_线程_js事件循环</title>
+    <url>/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程（process）"><a href="#进程（process）" class="headerlink" title="进程（process）"></a>进程（process）</h2><p>计算机已经运行的程序，是操作系统管理程序的一种方式；我们可以认为：启动一个程序，就会启动一个或者多个进程。</p>
+<h2 id="线程（thread）"><a href="#线程（thread）" class="headerlink" title="线程（thread）"></a>线程（thread）</h2><p>操作系统能够运行运算调度的最小单位，通常情况下它被包含在进程中（进程是线程的容器）；同样，我们可以认为：每一个进程，都会至少启动一个线程来执行程序中的代码，这个线程被称为主线程。</p>
+<p>当进程中的线程获取到<strong>时间片</strong>时，就可以快速执行我们编写的代码。</p>
+<h1 id="js线程"><a href="#js线程" class="headerlink" title="js线程"></a>js线程</h1><p>JavaScript是<strong>单线程</strong>的，但是JavaScript的线程应该有自己的容器进程︰浏览器或者Node。</p>
+<ul>
+<li>目前多数的浏览器其实都是多进程的，<strong>当我们打开一个tab页面时就会开启一个新的进程</strong>，<ul>
+<li>如果浏览器为单进程，一个页面卡死而造成所有页面无法响应，整个浏览器需要强制退出;</li>
+</ul>
+</li>
+<li>每个进程中又有很多的线程，其中包括执行JavaScript代码的线程;<ul>
+<li>如果当前js线程时耗时操作，就会造成代码阻塞。</li>
+<li>解决方法：<ul>
+<li>浏览器的每个进程是多线程的，那么其他线程可以来完成这个耗时的操作;比如<strong>网络请求、定时器</strong>，我们只需要在特性的时候执行应该有的回调即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p><strong>在浏览器环境下，js单线程属于浏览器进程；在Node环境下，js单线程属于Node进程。</strong></p>
+<p>js本身是单线程的，意味着js不适合做耗时操作，否则会导致程序阻塞；</p>
+<p>那么，耗时操作就交给浏览器或者Node创建的其他线程来完成，并将处理结果以回调函数的形式，放入浏览器或者Node维护的事件队列中，js在合适的时机来执行这些回调函数；</p>
+<p>js在执行回调函数时，也有可能会遇见耗时操作，同理，这些耗时操作一就会被加入到事件队列中已在合适的时机被js执行。</p>
+<h2 id="宏任务-amp-amp-微任务"><a href="#宏任务-amp-amp-微任务" class="headerlink" title="宏任务&amp;&amp;微任务"></a>宏任务&amp;&amp;微任务</h2><h3 id="宏任务（macrotask）"><a href="#宏任务（macrotask）" class="headerlink" title="宏任务（macrotask）"></a>宏任务（macrotask）</h3><p>浏览器的宏任务：ajax回调、定时器、DOM事件回调、UI Rendering（UI渲染完之后的回调）；</p>
+<p>Node的宏任务：setTimeout、setInterval、IO事件、setImmediate、close事件。</p>
+<h3 id="微任务（microtask）"><a href="#微任务（microtask）" class="headerlink" title="微任务（microtask）"></a>微任务（microtask）</h3><p>浏览器的微任务：queueMicrotask的回调、promise.then的回调、MutationObserver的API；</p>
+<p>Node的微任务：Promise的then回调、process.nextTick的回调、queueMicrotask 的回调。</p>
+<p>但是，Node中不简单是一个宏任务和微任务队列，</p>
+<p>微任务队列：</p>
+<ul>
+<li>nextTick queue：process.nextTick	</li>
+<li>other queue：Promise的then回调，queueMicrotask</li>
+</ul>
+<p>宏任务队列：</p>
+<ul>
+<li>timer queue : setTimeout、setInterval ;</li>
+<li>poll queue : IO事件;</li>
+<li>check queue : setImmediate ;</li>
+<li>close queue : close事件;</li>
+</ul>
+<p>Node的宏任务和微任务的执行顺序：nextTick queue、other queue、timer queue、poll queue、check queue、close queue  </p>
+<h3 id="总的执行过程"><a href="#总的执行过程" class="headerlink" title="总的执行过程"></a>总的执行过程</h3><p>注意：在执行宏任务之前，需要确保问任务队列被清空；new Promise是同步代码。</p>
+<ol>
+<li>首先执行js顶层代码（同步代码）；</li>
+<li>执行的过程中，遇见宏任务，将该宏任务加入到宏任务队列；</li>
+<li>遇见微任务，将该微任务加入到微任务队列；</li>
+<li>顶层代码执行完毕，依次执行微任务队列中的任务，清空微任务队列；</li>
+<li>执行宏任务队列最先加入的宏任务，同时执行步骤2、3；</li>
+<li>执行微任务队列中的任务，清空微任务队列，执行步骤5；</li>
+</ol>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>浏览器维护着两个队列：宏任务队列和微任务队列。</p>
+<p>浏览器的事件循环（简）：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220720223022458.png" alt="浏览器事件循环"></p>
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>浏览器中的EventLoop是根据HTML5定义的规范来实现的，不同的浏览器可能会有不同的实现，而Node中是由<strong>libuv</strong>实现的。</p>
+<p>Node架构图：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构图"></p>
+<ul>
+<li>libuv中主要维护了一个EventLoop和worker threads(线程池），其主要是为Node开发的，现在也被使用到Luvit、Julia、pyuv等其他地方;</li>
+<li>EventLoop负责调用系统的一些其他操作∶文件的IO、Network、child-processes等</li>
+</ul>
+<p>服务器相对于浏览器最大的区别：I&#x2F;O操作。</p>
+<p>js本身并不会进行发起网络请求，连接数据库写入数据库，读取文件等操作，这就交给libuv来执行，相当于libuv给js提供了一些接口供其来调用，其本质是libuv执行了系统调用，并将执行结果以回调函数的形式返回，js在合适时机从事件队列拿取这些回调函数去处理结果。</p>
+<p>Node中的事件循环被划分为很多阶段：</p>
+<ul>
+<li>定时器（Timers)：本阶段执行已经被setTimeout()和setInterval()的调度回调函数。</li>
+<li>待定回调(Pending Calback)：对某些系统操作（如TCP错误类型）执行回调，比如TCP连接时接收到ECONNREFUSED。</li>
+<li>idle， prepare：仅系统内部使用。</li>
+<li>轮询（Poll )∶检索新的IO事件;执行与I&#x2F;O相关的回调;</li>
+<li>检测( check ) ： setImmediate()回调函数在这里执行。</li>
+<li>关闭的回调函数：一些关闭的回调函数，如:socket.on(‘close’,…)。</li>
+</ul>
+<p>其中，Node程序经常停留在I&#x2F;O阶段</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721122601235.png" alt="Node微任务队列"></p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 0 1 4 2 3 5 6</span></span><br><span class="line"><span class="comment">// 以上代码不做分析</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>稍稍修改：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">then</span>(<span class="params">resolve</span>) &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 4 3 5 6</span></span><br></pre></td></tr></table></figure>
+
+<p>与第一次的不同之处在于，console.log(0)之后返回了一个thenable对象(实现了then方法的对象)<br> <strong>在原生的Promise的实现中，返回的thenable对象如果resolve了，这个resolve会被往后推一次，推到下一次的微任务里面</strong></p>
+<p>图示：</p>
+<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721152327981.png" alt="以上代码图示"></p>
+<p>参看：</p>
+<p><a href="https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485">https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485</a></p>
+<p>时间：1:10</p>
+<p><strong>再稍稍修改一下代码：</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="property">log2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 3 4 5 6</span></span><br></pre></td></tr></table></figure>
+
+<p>分析：返回了一个thenable对象会被退后一次，即：不是普通的值会被推后一次</p>
+<p><strong>如果返回了return Promise.resolve(4)</strong></p>
+<p><strong>则会推后两次。</strong> </p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>事件循环</category>
+        <category>单线程</category>
+        <category>操作系统</category>
+        <category>进程与线程</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>进程</tag>
+        <tag>线程</tag>
+        <tag>事件循环</tag>
+        <tag>eventLoop</tag>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -2512,7 +2653,7 @@
 ]]></content>
       <categories>
         <category>js</category>
-        <category>js实现原理</category>
+        <category>js底层原理</category>
       </categories>
       <tags>
         <tag>js</tag>
@@ -2523,114 +2664,6 @@
         <tag>ts</tag>
         <tag>js实现原理</tag>
         <tag>iterable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>进程_线程_js事件循环</title>
-    <url>/2022/07/20/%E8%BF%9B%E7%A8%8B-%E7%BA%BF%E7%A8%8B-js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程（process）"><a href="#进程（process）" class="headerlink" title="进程（process）"></a>进程（process）</h2><p>计算机已经运行的程序，是操作系统管理程序的一种方式；我们可以认为：启动一个程序，就会启动一个或者多个进程。</p>
-<h2 id="线程（thread）"><a href="#线程（thread）" class="headerlink" title="线程（thread）"></a>线程（thread）</h2><p>操作系统能够运行运算调度的最小单位，通常情况下它被包含在进程中（进程是线程的容器）；同样，我们可以认为：每一个进程，都会至少启动一个线程来执行程序中的代码，这个线程被称为主线程。</p>
-<p>当进程中的线程获取到<strong>时间片</strong>时，就可以快速执行我们编写的代码。</p>
-<h1 id="js线程"><a href="#js线程" class="headerlink" title="js线程"></a>js线程</h1><p>JavaScript是<strong>单线程</strong>的，但是JavaScript的线程应该有自己的容器进程︰浏览器或者Node。</p>
-<ul>
-<li>目前多数的浏览器其实都是多进程的，<strong>当我们打开一个tab页面时就会开启一个新的进程</strong>，<ul>
-<li>如果浏览器为单进程，一个页面卡死而造成所有页面无法响应，整个浏览器需要强制退出;</li>
-</ul>
-</li>
-<li>每个进程中又有很多的线程，其中包括执行JavaScript代码的线程;<ul>
-<li>如果当前js线程时耗时操作，就会造成代码阻塞。</li>
-<li>解决方法：<ul>
-<li>浏览器的每个进程是多线程的，那么其他线程可以来完成这个耗时的操作;比如<strong>网络请求、定时器</strong>，我们只需要在特性的时候执行应该有的回调即可。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h1><p><strong>在浏览器环境下，js单线程属于浏览器进程；在Node环境下，js单线程属于Node进程。</strong></p>
-<p>js本身是单线程的，意味着js不适合做耗时操作，否则会导致程序阻塞；</p>
-<p>那么，耗时操作就交给浏览器或者Node创建的其他线程来完成，并将处理结果以回调函数的形式，放入浏览器或者Node维护的事件队列中，js在合适的时机来执行这些回调函数；</p>
-<p>js在执行回调函数时，也有可能会遇见耗时操作，同理，这些耗时操作一就会被加入到事件队列中已在合适的时机被js执行。</p>
-<h2 id="宏任务-amp-amp-微任务"><a href="#宏任务-amp-amp-微任务" class="headerlink" title="宏任务&amp;&amp;微任务"></a>宏任务&amp;&amp;微任务</h2><h3 id="宏任务（macrotask）"><a href="#宏任务（macrotask）" class="headerlink" title="宏任务（macrotask）"></a>宏任务（macrotask）</h3><p>浏览器的宏任务：ajax回调、定时器、DOM事件回调、UI Rendering（UI渲染完之后的回调）；</p>
-<p>Node的宏任务：setTimeout、setInterval、IO事件、setImmediate、close事件。</p>
-<h3 id="微任务（microtask）"><a href="#微任务（microtask）" class="headerlink" title="微任务（microtask）"></a>微任务（microtask）</h3><p>浏览器的微任务：queueMicrotask的回调、promise.then的回调、MutationObserver的API；</p>
-<p>Node的微任务：Promise的then回调、process.nextTick的回调、queueMicrotask 的回调。</p>
-<p>但是，Node中不简单是一个宏任务和微任务队列，</p>
-<p>微任务队列：</p>
-<ul>
-<li>nextTick queue：process.nextTick	</li>
-<li>other queue：Promise的then回调，queueMicrotask</li>
-</ul>
-<p>宏任务队列：</p>
-<ul>
-<li>timer queue : setTimeout、setInterval ;</li>
-<li>poll queue : IO事件;</li>
-<li>check queue : setImmediate ;</li>
-<li>close queue : close事件;</li>
-</ul>
-<p>Node的宏任务和微任务的执行顺序：nextTick queue、other queue、timer queue、poll queue、check queue、close queue  </p>
-<h3 id="总的执行过程"><a href="#总的执行过程" class="headerlink" title="总的执行过程"></a>总的执行过程</h3><p>注意：在执行宏任务之前，需要确保问任务队列被清空；new Promise是同步代码。</p>
-<ol>
-<li>首先执行js顶层代码（同步代码）；</li>
-<li>执行的过程中，遇见宏任务，将该宏任务加入到宏任务队列；</li>
-<li>遇见微任务，将该微任务加入到微任务队列；</li>
-<li>顶层代码执行完毕，依次执行微任务队列中的任务，清空微任务队列；</li>
-<li>执行宏任务队列最先加入的宏任务，同时执行步骤2、3；</li>
-<li>执行微任务队列中的任务，清空微任务队列，执行步骤5；</li>
-</ol>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>浏览器维护着两个队列：宏任务队列和微任务队列。</p>
-<p>浏览器的事件循环（简）：</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220720223022458.png" alt="浏览器事件循环"></p>
-<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>浏览器中的EventLoop是根据HTML5定义的规范来实现的，不同的浏览器可能会有不同的实现，而Node中是由<strong>libuv</strong>实现的。</p>
-<p>Node架构图：</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220712144326843.png" alt="Node架构图"></p>
-<ul>
-<li>libuv中主要维护了一个EventLoop和worker threads(线程池），其主要是为Node开发的，现在也被使用到Luvit、Julia、pyuv等其他地方;</li>
-<li>EventLoop负责调用系统的一些其他操作∶文件的IO、Network、child-processes等</li>
-</ul>
-<p>服务器相对于浏览器最大的区别：I&#x2F;O操作。</p>
-<p>js本身并不会进行发起网络请求，连接数据库写入数据库，读取文件等操作，这就交给libuv来执行，相当于libuv给js提供了一些接口供其来调用，其本质是libuv执行了系统调用，并将执行结果以回调函数的形式返回，js在合适时机从事件队列拿取这些回调函数去处理结果。</p>
-<p>Node中的事件循环被划分为很多阶段：</p>
-<ul>
-<li>定时器（Timers)：本阶段执行已经被setTimeout()和setInterval()的调度回调函数。</li>
-<li>待定回调(Pending Calback)：对某些系统操作（如TCP错误类型）执行回调，比如TCP连接时接收到ECONNREFUSED。</li>
-<li>idle， prepare：仅系统内部使用。</li>
-<li>轮询（Poll )∶检索新的IO事件;执行与I&#x2F;O相关的回调;</li>
-<li>检测( check ) ： setImmediate()回调函数在这里执行。</li>
-<li>关闭的回调函数：一些关闭的回调函数，如:socket.on(‘close’,…)。</li>
-</ul>
-<p>其中，Node程序经常停留在I&#x2F;O阶段</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721122601235.png" alt="Node微任务队列"></p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 0 1 4 2 3 5 6</span></span><br><span class="line"><span class="comment">// 以上代码不做分析</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>稍稍修改：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">then</span>(<span class="params">resolve</span>) &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 4 3 5 6</span></span><br></pre></td></tr></table></figure>
-
-<p>与第一次的不同之处在于，console.log(0)之后返回了一个thenable对象(实现了then方法的对象)<br> <strong>在原生的Promise的实现中，返回的thenable对象如果resolve了，这个resolve会被往后推一次，推到下一次的微任务里面</strong></p>
-<p>图示：</p>
-<p><img src="https://hrmtest.oss-cn-beijing.aliyuncs.com/image-20220721152327981.png" alt="以上代码图示"></p>
-<p>参看：</p>
-<p><a href="https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485">https://ke.qq.com/webcourse/3619571/103765593#taid=11926213651544819&amp;vid=8602268011107553485</a></p>
-<p>时间：1:10</p>
-<p><strong>再稍稍修改一下代码：</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">4</span>)</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">resolve</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="property">log2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 0 1 2 3 4 5 6</span></span><br></pre></td></tr></table></figure>
-
-<p>分析：返回了一个thenable对象会被退后一次，即：不是普通的值会被推后一次</p>
-<p><strong>如果返回了return Promise.resolve(4)</strong></p>
-<p><strong>则会推后两次。</strong> </p>
-]]></content>
-      <categories>
-        <category>js</category>
-        <category>事件循环</category>
-        <category>进程与线程</category>
-        <category>进程与线程</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>操作系统</tag>
-        <tag>进程</tag>
-        <tag>线程</tag>
-        <tag>事件循环</tag>
-        <tag>eventLoop</tag>
       </tags>
   </entry>
 </search>
